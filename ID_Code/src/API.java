@@ -1,4 +1,6 @@
 // requires installation of JSON-java
+// TODO: comment
+// TODO: improve modularity, access modifiers
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -122,5 +124,6 @@ public class API {
             essentialData.add(conditions);
         }
         truncatedData = essentialData;
+        //System.out.println(truncatedData.size());
     }
 }
