@@ -19,11 +19,11 @@ Issues/To-improve:
 - fetch daily data
 
 Miscellaneous
-swiping
-swing/awt: https://stackoverflow.com/questions/36800640/how-to-find-direction-of-swipe-in-jframe
-javafx: https://docs.oracle.com/javase/8/javafx/api/javafx/scene/input/SwipeEvent.html
+- swiping
+- swing/awt: https://stackoverflow.com/questions/36800640/how-to-find-direction-of-swipe-in-jframe
+- javafx: https://docs.oracle.com/javase/8/javafx/api/javafx/scene/input/SwipeEvent.html
 
 For reference
-OpenWeatherMap API client: https://github.com/akapribot/OWM-JAPIs/blob/master/src/main/java/net/aksingh/owmjapis/OpenWeatherMap.java
-Model app: https://github.com/jenz270/WeatherApplication
-Weatherbit.io API client: https://github.com/th3le0nk1ng/weatherbit-api-client
+- OpenWeatherMap API client: https://github.com/akapribot/OWM-JAPIs/blob/master/src/main/java/net/aksingh/owmjapis/OpenWeatherMap.java
+- Model app: https://github.com/jenz270/WeatherApplication
+- Weatherbit.io API client: https://github.com/th3le0nk1ng/weatherbit-api-client
