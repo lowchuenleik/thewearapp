@@ -13,5 +13,7 @@ Issues/To-improve:
 - include daily forecast
 - Duration.between(now, lastFetched).getSeconds() may overflow? if used 20 years from now. potential solution: initialise lastFetched as week before when the object was first created
 
-Miscellaneous:
-https://stackoverflow.com/questions/36800640/how-to-find-direction-of-swipe-in-jframe
+==Miscellaneous
+swiping
+swing/awt: https://stackoverflow.com/questions/36800640/how-to-find-direction-of-swipe-in-jframe
+javafx: https://docs.oracle.com/javase/8/javafx/api/javafx/scene/input/SwipeEvent.html
