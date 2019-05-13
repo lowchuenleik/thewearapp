@@ -10,6 +10,12 @@ public class Today {
   public Today() {
     setJacketLimit(14);
     setRainLimit(60);
+    // should we instead have
+    
+    //jacketLimit=Settings.get_jacket();
+    //rainLimit=Settings.get_rain();
+    
+    //as jacket and rain limits are set there and these are the values we need to use?
 
   }
 
