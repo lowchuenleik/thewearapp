@@ -2,7 +2,7 @@ public class Settings{
 
     // all fields have a default setting that  can be changed if the user wants to
     private String location="Cambridge";// should not be changed
-    private boolean notficiations= true;
+    private boolean notficiations= true;// we're not using notifications in the design anymore should we change the design and ommit that
     private boolean unit_celsius= true;// if false use Fahreneheit
 
     private int jacket= 20; // I like to wear a jacket below "..."
