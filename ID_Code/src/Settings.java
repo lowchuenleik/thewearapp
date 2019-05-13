@@ -20,7 +20,7 @@ public class Settings{
 
 
     /*methods
-    * quite interlinked with gui so currently will be mostly pseudocode*/
+    * quite interlinked with gui so currently the code doesn't mean much*/
 
     //notifications
     private void set_notifications() {
