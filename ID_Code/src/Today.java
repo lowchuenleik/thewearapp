@@ -8,13 +8,9 @@ public class Today {
 
 
   public Today() {
-    setJacketLimit(14);
-    setRainLimit(60);
-    // should we instead have
-    
-    //jacketLimit=Settings.get_jacket();
-    //rainLimit=Settings.get_rain();
-    
+    jacketLimit=Settings.get_jacket();
+    rainLimit=Settings.get_rain();
+
     //as jacket and rain limits are set there and these are the values we need to use?
 
   }
@@ -22,12 +18,6 @@ public class Today {
 
 
   //getter and setter methods
-  public void setJacketLimit(int limit) {
-    jacketLimit = limit;
-  }
-  public void setRainLimit(int limit) {
-    rainLimit = limit;
-  }
   public File getClothes(){
     updateClothes();
     return clothes;
@@ -49,14 +39,14 @@ public class Today {
     }
 
     else if(Summary.getWeatherCode() = 3){ //rainy
-      if(Summary.getAverageTemp() > jacketLimit) // rainy warm
+      if(Summary.getAverageTemp() > Settings.get_jacket();) // rainy warm
       clothes =  new File("\\data\\clothes\\rainWarm.png");
      else { //rainy cold
       clothes =  new File("\\data\\clothes\\rainCold.png");
     }
   }
 
-    else if (Summary.getLowTemp() < jacketLimit){ //cold (no rain)
+    else if (Summary.getLowTemp() < Settings.get_jacket();){ //cold (no rain)
       clothes = new File("\\data\\clothes\\cold.png");
     }
     else { //warm (no rain)
