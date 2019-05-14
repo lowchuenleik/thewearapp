@@ -95,7 +95,88 @@ public class Today {
     }
 
     public String setMessage(Summary sum) {
-
-         return "";
+        String msg = "";
+        if (sum.getAverageTemp() < 0) {
+            if (sum.getWeatherCode() == 0) {    //sunny
+                msg = "Sunny but cold? Sounds like skiing weather to me! Wrap up warm."
+            } else if (sum.getWeatherCode() == 1) {   //windy
+                msg = "Man, it's cold out there! Make sure to bring your gloves, scarf and hat!";
+            } else if (sum.getWeatherCode() == 2) {     //cloudy
+                msg = "Bit of an overcast day, huh? Sub-zero temperatures means wrap up warm though!";
+            } else if (sum.getWeatherCode() == 3) {     //rainy
+                msg = "Make sure you wrap up warm and be careful as the rain may become icy.";
+            } else {    //snowy
+                msg = "Wrap up warm and don't forget your gloves! Do you want to build a snowman?";
+            }
+        } else if (sum.getAverageTemp() < 5) {
+            if (sum.getWeatherCode() == 0) {    //sunny
+                msg = "Well the positive is that it's sunny right?"
+            } else if (sum.getWeatherCode() == 1) {   //windy
+                msg = "It might be quite nippy so make sure to bring your gloves, scarf and hat!";
+            } else if (sum.getWeatherCode() == 2) {     //cloudy
+                msg = "Bit of an overcast day, huh? Wrap up warm!";
+            } else if (sum.getWeatherCode() == 3) {     //rainy
+                msg = "Make sure you wrap up warm and be careful as the rain may become icy.";
+            } else {    //snowy
+                msg = "Wrap up warm and don't forget your gloves!";
+            }
+        } else if (sum.getAverageTemp() < 10) {
+            if (sum.getWeatherCode() == 0) {    //sunny
+                msg = "If only it were 10 degrees warmer..."
+            } else if (sum.getWeatherCode() == 1) {   //windy
+                msg = "Don't forget to bring a jacket today! The wind may make it feel colder than it actually is.";
+            } else if (sum.getWeatherCode() == 2) {     //cloudy
+                msg = "Well it's a bit dull and grey. Wear a few layers and a jacket.";
+            } else if (sum.getWeatherCode() == 3) {     //rainy
+                msg = "The weather may be miserable but you don't have to be! Have a good day!";
+            } else {    //snowy
+                msg = "Wear a few layers and maybe bring your gloves as well as your jacket.";
+            }
+        } else if (sum.getAverageTemp() < 15) {
+            if (sum.getWeatherCode() == 0) {    //sunny
+                msg = "Sunny but cold? Sounds like skiing weather to me! Wrap up warm."
+            } else if (sum.getWeatherCode() == 1) {   //windy
+                msg = "It might be quite nippy so make sure to bring your gloves, scarf and hat!";
+            } else if (sum.getWeatherCode() == 2) {     //cloudy
+                msg = "Bit of an overcast day, huh? Wrap up warm!";
+            } else if (sum.getWeatherCode() == 3) {     //rainy
+                msg = "Make sure you wrap up warm and be careful as the rain may become icy.";
+            } else {    //snowy
+                msg = "Hmm... well that's interesting. Take some gloves?";
+            }
+        } else if (sum.getAverageTemp() < 20) {
+            if (sum.getWeatherCode() == 0) {    //sunny
+                msg = "Hmm, is it warm enough to go without a jacket?"
+            } else if (sum.getWeatherCode() == 1) {   //windy
+                msg = "The wind may make it feel a little colder than it is so take a jacket!";
+            } else if (sum.getWeatherCode() == 2) {     //cloudy
+                msg = "It's a little overcast, so take a jacket if you get cold easily.";
+            } else if (sum.getWeatherCode() == 3) {
+                msg = "Don't forget to take a raincoat or umbrella with you!";
+            } else {
+                msg = "Did they change the freezing point of water?";
+            }
+        } else if (sum.getAverageTemp() < 25) {
+            if (sum.getWeatherCode() == 0 || sum.getWeatherCode() == 1) {
+                msg = "Don't forget to put on suncream today!";
+            } else if (sum.getWeatherCode() == 2) {
+                msg = "There may be clouds but you should probably still wear suncream!";
+            } else if (sum.getWeatherCode() == 3) {
+                msg = "It may be warm but don't forget a raincoat!";
+            } else {
+                msg = "I'm honestly just as confused as you.";
+            }
+        } else {
+            if (sum.getWeatherCode() == 0 || sum.getWeatherCode() == 1) {
+                msg = "Don't forget to put on suncream today!";
+            } else if (sum.getWeatherCode() == 2) {
+                msg = "There may be clouds but you should probably still wear suncream!";
+            } else if (sum.getWeatherCode() == 3) {
+                msg = "It may be a bit like a rainforest today - both hot and rainy so don't forget a jacket!";
+            } else {
+                msg = "I guess they were right about that climate change thing?";
+            }
+        }
+        return msg;
     }
 }
