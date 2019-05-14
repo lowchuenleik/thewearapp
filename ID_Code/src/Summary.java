@@ -8,8 +8,7 @@ public class Summary {
     private String partOfDay;
     private int cloudCoverage;
 
-    //TODO: make rest of set & get statements
-    public int getRain() { return rainProbability };
+    public int getRain() { return rainProbability;}
 
     public int getRainProbability() {
         return rainProbability;

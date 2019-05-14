@@ -1,73 +1,101 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.LinkedList;
 
 public class Today {
     private int genWeather;
-    private LinkedList<String> clothes;
-    private LinkedList<String> accessories;
+    private LinkedList<File> clothes;
+    private LinkedList<File> accessories;
     private int temperature;
-    private String background; //string to directory or change to file?
+    private File background;
     private String message;
 
     public Today(Summary sum) {
         this.genWeather = sum.getWeatherCode();
         this.clothes = setClothes(sum);
         this.accessories = setAccessories(sum);
-        this.temperature = sum.getAvgTemp();
+        this.temperature = sum.getAverageTemp();
         this.background = setBackground(sum);
         this.message = setMessage(sum);
     }
 
-    public LinkedList<String> getClothes() {
+    public LinkedList<File> getClothes() {
         return clothes;
     }
 
-    public LinkedList<String> setClothes(Summary sum) {
-        if(Summary.getWeatherCode() = 4){ //snowy (will always be cold)
-            clothes =  new File("\\data\\clothes\\snowy.png");
+    public LinkedList<File> setClothes(Summary sum) {
+        LinkedList<File> clothes = new LinkedList<>();
+        if(sum.getWeatherCode() == 4){ //snowy (will always be cold)
+            clothes.add(new File("\\data\\clothes\\snowy.png"));
+        } else if(sum.getWeatherCode() == 3) { //rainy
+            if (sum.getAverageTemp() > Settings.get_jacket()) {// rainy warm
+                clothes.add(new File("\\data\\clothes\\rainWarm.png"));
+            } else { //rainy cold
+                clothes.add(new File("\\data\\clothes\\rainCold.png"));
+            }
+        } else if (sum.getLowTemp() < Settings.get_jacket()){ //cold (no rain)
+            clothes.add(new File("\\data\\clothes\\cold.png"));
+        } else { //warm (no rain)
+            clothes.add(new File("\\data\\clothes\\warm.png"));
         }
 
-        else if(Summary.getWeatherCode() = 3){ //rainy
-            if(Summary.getAverageTemp() > Settings.get_jacket();) // rainy warm
-            clothes =  new File("\\data\\clothes\\rainWarm.png");
-         else { //rainy cold
-                    clothes =  new File("\\data\\clothes\\rainCold.png");
-                }
-            }
-
-            else if (Summary.getLowTemp() < Settings.get_jacket();){ //cold (no rain)
-                clothes = new File("\\data\\clothes\\cold.png");
-            }
-        else { //warm (no rain)
-                clothes =  new File("\\data\\clothes\\warm.png");
-        }
-
-        //TODO: put into linked list structure
-        return new LinkedList<>();
+        return clothes;
     }
 
-    public LinkedList<String> getAccessories() {
+    public LinkedList<File> getAccessories() {
         return accessories;
     }
 
-    public LinkedList<String> setAccessories(Summary sum) {
-        return new LinkedList<>();
+    public LinkedList<File> setAccessories(Summary sum) {
+        LinkedList<File> accessories = new LinkedList<>();
+
+        //accessories based on weather
+        if (sum.getWeatherCode() == 4) {    //snowy
+            if (sum.getAverageTemp() <= 10) {
+                accessories.add(new File("data/accessories/hat.png"));
+            }
+            accessories.add(new File("data/accessories/gloves.png"));
+            accessories.add(new File("data/accessories/scarf.png"));
+        } else if (sum.getWeatherCode() == 0) {     //sunny
+            if (sum.getAverageTemp() > 14) {
+                accessories.add(new File("data/accessories/sunglasses.png"));
+            }
+            if (sum.getAverageTemp() > 20) {
+                accessories.add(new File("data/accessories/sunhat.png"));
+            }
+        } else if (sum.getWeatherCode() == 3) { //rainy
+            accessories.add(new File("data/accessories/raincoat.png"));
+        }
+
+        //accessories based on settings
+        if (sum.getAverageTemp() < Settings.get_jacket() && sum.getWeatherCode() != 3) {
+            accessories.add(new File("data/accessories/jacket.png"));
+        }
+        if (sum.getRain() > Settings.get_rain()) {
+            accessories.add(new File("data/accessories/umbrella.png"));
+        }
+        return accessories;
     }
 
     public int getTemperature() {
         return temperature;
     }
 
-    public String getBackground() {
+    public File getBackground() {
         return background;
     }
 
-    public String setBackground(Summary sum) {
-        background = "";
-        if(Summary.partOfDay = "n"){ //night
-            background = new File("\\data\\backgrounds\\night.png");
+    public File setBackground(Summary sum) {
+        if(sum.getPartOfDay() == "n"){ //night
+            if (sum.getWeatherCode() == 3) {    //rainy
+                background = new File("\\data\\backgrounds\\nightrain.png");
+            } else {
+                background = new File("\\data\\backgrounds\\night.png");
+            }
         }
         else { //day
-            switch (Summary.getWeatherCode()) {
+            switch (sum.getWeatherCode()) {
                 case 0:
                     background = new File("\\data\\clothes\\sunny.png");
                     break;
@@ -98,7 +126,7 @@ public class Today {
         String msg = "";
         if (sum.getAverageTemp() < 0) {
             if (sum.getWeatherCode() == 0) {    //sunny
-                msg = "Sunny but cold? Sounds like skiing weather to me! Wrap up warm."
+                msg = "Sunny but cold? Sounds like skiing weather to me! Wrap up warm.";
             } else if (sum.getWeatherCode() == 1) {   //windy
                 msg = "Man, it's cold out there! Make sure to bring your gloves, scarf and hat!";
             } else if (sum.getWeatherCode() == 2) {     //cloudy
@@ -110,7 +138,7 @@ public class Today {
             }
         } else if (sum.getAverageTemp() < 5) {
             if (sum.getWeatherCode() == 0) {    //sunny
-                msg = "Well the positive is that it's sunny right?"
+                msg = "Well the positive is that it's sunny right?";
             } else if (sum.getWeatherCode() == 1) {   //windy
                 msg = "It might be quite nippy so make sure to bring your gloves, scarf and hat!";
             } else if (sum.getWeatherCode() == 2) {     //cloudy
@@ -122,7 +150,7 @@ public class Today {
             }
         } else if (sum.getAverageTemp() < 10) {
             if (sum.getWeatherCode() == 0) {    //sunny
-                msg = "If only it were 10 degrees warmer..."
+                msg = "If only it were 10 degrees warmer...";
             } else if (sum.getWeatherCode() == 1) {   //windy
                 msg = "Don't forget to bring a jacket today! The wind may make it feel colder than it actually is.";
             } else if (sum.getWeatherCode() == 2) {     //cloudy
@@ -134,7 +162,7 @@ public class Today {
             }
         } else if (sum.getAverageTemp() < 15) {
             if (sum.getWeatherCode() == 0) {    //sunny
-                msg = "Sunny but cold? Sounds like skiing weather to me! Wrap up warm."
+                msg = "Sunny but cold? Sounds like skiing weather to me! Wrap up warm.";
             } else if (sum.getWeatherCode() == 1) {   //windy
                 msg = "It might be quite nippy so make sure to bring your gloves, scarf and hat!";
             } else if (sum.getWeatherCode() == 2) {     //cloudy
@@ -146,7 +174,7 @@ public class Today {
             }
         } else if (sum.getAverageTemp() < 20) {
             if (sum.getWeatherCode() == 0) {    //sunny
-                msg = "Hmm, is it warm enough to go without a jacket?"
+                msg = "Hmm, is it warm enough to go without a jacket?";
             } else if (sum.getWeatherCode() == 1) {   //windy
                 msg = "The wind may make it feel a little colder than it is so take a jacket!";
             } else if (sum.getWeatherCode() == 2) {     //cloudy

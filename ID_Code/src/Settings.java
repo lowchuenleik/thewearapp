@@ -1,11 +1,9 @@
-package PACKAGE_NAME;
-
 public class Settings{
   private String location;
   private boolean notficiations;
   private boolean unit_celsius;
-  private int jacket;
-  private int rain;
+  private static int jacket;
+  private static int rain;
   private boolean[] clothes;
 
   public Settings(){
@@ -32,7 +30,7 @@ public class Settings{
 
     /*methods
     quite interlinked with gui so currently the code doesn't mean much*/
-
+/*
     //notifications
     private void set_notifications() {
         if (notifications) {
@@ -47,7 +45,7 @@ public class Settings{
 
     private boolean get_notifications (){
         return  notifications;
-    }
+    }*/
 
     //unit
     private void set_unit() {}
@@ -56,18 +54,18 @@ public class Settings{
     }
 
     //jacket
-    public void set_jacket(int t){
+    public static void set_jacket(int t){
         jacket=t;
     }
-    public int get_jacket(){
+    public static int get_jacket(){
         return jacket;
     }
     //rain
-    public void set_rain(int p){
+    public static void set_rain(int p){
         rain=p;
     }
 
-    public int get_rain(){
+    public static int get_rain(){
         return rain;
     }
 
