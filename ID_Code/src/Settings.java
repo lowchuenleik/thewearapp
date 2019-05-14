@@ -1,3 +1,5 @@
+package PACKAGE_NAME;
+
 public class Settings{
   private String location;
   private boolean notficiations;
