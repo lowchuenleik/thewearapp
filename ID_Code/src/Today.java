@@ -27,17 +27,27 @@ public class Today {
     public LinkedList<File> setClothes(Summary sum) {
         LinkedList<File> clothes = new LinkedList<>();
         if(sum.getWeatherCode() == 4){ //snowy (will always be cold)
-            clothes.add(new File("\\data\\clothes\\snowy.png"));
-        } else if(sum.getWeatherCode() == 3) { //rainy
-            if (sum.getAverageTemp() > Settings.get_jacket()) {// rainy warm
-                clothes.add(new File("\\data\\clothes\\rainWarm.png"));
-            } else { //rainy cold
-                clothes.add(new File("\\data\\clothes\\rainCold.png"));
+            clothes.add(File("data/clothes/snowy1.png"));
+            clothes.add(File("data/clothes/snowy2.png"));
+        }
+
+        else if(sum.getWeatherCode() == 3){ //rainy
+            if(sum.getAverageTemp() > Settings.get_jacket();) // rainy warm
+                clothes.add(File("data/clothes/rainWarm1.png"));
+                clothes.add(File("data/clothes/rainWarm2.png"));
+            else { //rainy cold
+                clothes.add(File("data/clothes/rainCold1.png"));
+                clothes.add(File("data/clothes/rainCold2.png"));
             }
-        } else if (sum.getLowTemp() < Settings.get_jacket()){ //cold (no rain)
-            clothes.add(new File("\\data\\clothes\\cold.png"));
-        } else { //warm (no rain)
-            clothes.add(new File("\\data\\clothes\\warm.png"));
+        }
+
+        else if (sum.getLowTemp() < Settings.get_jacket();){ //cold (no rain)
+            clothes.add(File("data/clothes/cold1.png"));
+            clothes.add(File("data/clothes/cold2.png"));
+        }
+        else { //warm (no rain)
+            clothes.add(File("data/clothes/warm1.png"));
+            clothes.add(File("data/clothes/warm2.png"));
         }
 
         return clothes;
@@ -89,27 +99,27 @@ public class Today {
     public File setBackground(Summary sum) {
         if(sum.getPartOfDay() == "n"){ //night
             if (sum.getWeatherCode() == 3) {    //rainy
-                background = new File("\\data\\backgrounds\\nightrain.png");
+                background = new File("data/backgrounds/nightrain.png");
             } else {
-                background = new File("\\data\\backgrounds\\night.png");
+                background = new File("data/backgrounds/night.png");
             }
         }
         else { //day
             switch (sum.getWeatherCode()) {
                 case 0:
-                    background = new File("\\data\\clothes\\sunny.png");
+                    background = new File("data/backgrounds/sunny.png");
                     break;
                 case 1:
-                    background = new File("\\data\\clothes\\windy.png");
+                    background = new File("data/backgrounds/windy.png");
                     break;
                 case 2:
-                    background = new File("\\data\\clothes\\cloudy.png");
+                    background = new File("data/backgrounds/cloudy.png");
                     break;
                 case 3:
-                    background = new File("\\data\\clothes\\rainy.png");
+                    background = new File("data/backgrounds/rainy.png");
                     break;
                 case 4:
-                    background = new File("\\data\\clothes\\snowy.png");
+                    background = new File("ddata/backgrounds/snowy.png");
                     break;
 
             }
