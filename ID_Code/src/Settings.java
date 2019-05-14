@@ -1,6 +1,6 @@
 package PACKAGE_NAME;
 
-public class Settings{
+public staic class Settings{
   private String location;
   private boolean notficiations;
   private boolean unit_celsius;
