@@ -10,12 +10,12 @@ public class Settings{
 
   public Settings(){
     // all fields have a default setting that  can be changed if the user wants to
-    location="Cambridge";// should not be changed
+    location = "Cambridge";// should not be changed
     //notficiations= true;// we're not using notifications in the design anymore should we change the design and ommit that
     //unit_celsius= true;// if false use Fahreneheit
 
-    jacket= 20; // I like to wear a jacket below "..."
-    rain=50;// I like to bring an umbrella above "..." cahnce of rain
+    jacket = 20; // I like to wear a jacket below "..."
+    rain = 50;// I like to bring an umbrella above "..." cahnce of rain
 
     //initialize array to default: person wears everything
     for(int i=0; i<5; i++){
