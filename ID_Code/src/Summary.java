@@ -1,6 +1,5 @@
-package PACKAGE_NAME;
-
 public class Summary {
+<<<<<<< Updated upstream
   private int rainProbability;
   private int weatherCode;
   private int highTemp;
@@ -12,4 +11,18 @@ public class Summary {
 
   //TODO: make rest of set & get statements
   public int getRain() { return rainProbability };
+=======
+    private int lowTemp;
+    private int highTemp;
+    private int avgTemp;
+
+    public int getWeatherCode() {
+        return 0;
+    }
+
+    public int getAvgTemp() {
+        return 0;
+    }
+
+>>>>>>> Stashed changes
 }
