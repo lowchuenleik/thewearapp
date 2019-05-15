@@ -1,0 +1,25 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<GridPane fx:controller="thewearapp.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+
+    <AnchorPane GridPane.rowIndex="0" GridPane.columnIndex="0">
+        <Button text="settings" AnchorPane.rightAnchor="1"
+                onAction="#toSettings"/>
+    </AnchorPane>
+    <ScrollPane GridPane.rowIndex="1" GridPane.columnIndex="0">
+        <GridPane>
+            <Text text="hour1" GridPane.rowIndex="0" GridPane.columnIndex="0"></Text>
+            <Text text="icon1" GridPane.rowIndex="0" GridPane.columnIndex="1"></Text>
+            <Text text="temp1" GridPane.rowIndex="0" GridPane.columnIndex="2"></Text>
+        </GridPane>
+    </ScrollPane>
+
+
+</GridPane>
+
+

@@ -1,0 +1,81 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<VBox alignment="center" style=".root{-fx-background-image: url('file:src/data/background/cloudy.png');}" fx:controller="thewearapp.Controller" xmlns:fx="http://javafx.com/fxml">
+    <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+
+    <AnchorPane>
+        <Button text="Settings" AnchorPane.rightAnchor="1"
+            onAction="#toSettings"/>
+    </AnchorPane>
+
+    <GridPane xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+        <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+        <VBox GridPane.columnIndex="0" GridPane.rowIndex="0"
+            GridPane.rowSpan="2" minWidth="100" alignment="CENTER">
+            <ImageView
+                    fx:id="imageView"
+                    fitHeight="150.0"
+                    fitWidth="200.0"
+                    layoutX="61.0"
+                    layoutY="83.0"
+                    pickOnBounds="true"
+                    preserveRatio="true">
+                <image>
+                    <fx:reference source="clothing"/>
+                </image>
+            </ImageView>
+
+
+            <AnchorPane>
+                <Button text="previous" AnchorPane.leftAnchor="1"
+                        onAction="#previousClothes"/>
+                <Button text="next" AnchorPane.rightAnchor="1"
+                        onAction="#nextClothes"/>
+            </AnchorPane>
+        </VBox>
+        <VBox GridPane.rowIndex="0" GridPane.columnIndex="1" alignment="CENTER" GridPane.fillHeight="true">
+            <Text text="$day" fill="white" scaleX="3" scaleY="3"></Text>
+            <Text text=""></Text>
+            <Text text="7°" fill="white" scaleX="2" scaleY="2"></Text>
+            <Text text="bring an umbrella tzxckljkd sdlfkjalsknfd lkjfd" fill="white"></Text>
+        </VBox>
+        <VBox GridPane.rowIndex="1" GridPane.columnIndex="1">
+            <ImageView
+                    fx:id="accessory1"
+                    fitHeight="60.0"
+                    fitWidth="80.0"
+                    layoutX="61.0"
+                    layoutY="83.0"
+                    pickOnBounds="true"
+                    preserveRatio="true">
+                <image>
+                    <fx:reference source="accessory1Image"/>
+                </image>
+            </ImageView>
+            <ImageView
+                    fx:id="accessory2"
+                    fitHeight="60.0"
+                    fitWidth="80.0"
+                    layoutX="61.0"
+                    layoutY="83.0"
+                    pickOnBounds="true"
+                    preserveRatio="true">
+                <image>
+                    <fx:reference source="accessory2Image"/>
+                </image>
+            </ImageView>
+        </VBox>
+    </GridPane>
+
+    <AnchorPane>
+        <Button text="daily" AnchorPane.leftAnchor="1"
+                onAction="#toDaily"/>
+        <Button text="hourly" AnchorPane.rightAnchor="1"
+                onAction="#toHourly"/>
+    </AnchorPane>
+
+</VBox>
+
