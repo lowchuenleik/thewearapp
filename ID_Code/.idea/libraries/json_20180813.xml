@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="json-20180813">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../json-20180813.jar!/" />
+      <root url="file://$USER_HOME$/GitHub_Projects/JAR_Files/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/GitHub_Projects/JAR_Files/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/GitHub_Projects/JAR_Files/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/GitHub_Projects/JAR_Files/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib" recursive="false" type="SOURCES" />
+  </library>
+</component>

@@ -8,6 +8,7 @@ public class Today {
     private int temperature;
     private File background;
     private String message;
+    private static String dataFolder = "src/data/";
 
     public Today(Summary sum) {
         this.genWeather = sum.getWeatherCode();
@@ -25,36 +26,36 @@ public class Today {
     public LinkedList<File> setClothes(Summary sum) {
         LinkedList<File> clothes = new LinkedList<>();
         if(sum.getWeatherCode() == 4){ //snowy (will always be cold)
-            clothes.add(new File("data/clothes/snowy1.png"));
-            clothes.add(new File("data/clothes/snowy2.png"));
+            clothes.add(new File(dataFolder + "clothes/snowy1.png"));
+            clothes.add(new File(dataFolder + "clothes/snowy2.png"));
         }
 
         else if (sum.getAverageTemp() <= 15 && sum.getAverageTemp() > 10){ //cold
-            clothes.add(new File("data/clothes/cold1.png"));
-            clothes.add(new File("data/clothes/cold2.png"));
+            clothes.add(new File(dataFolder + "clothes/cold1.png"));
+            clothes.add(new File(dataFolder + "clothes/cold2.png"));
         }
 
         else if(sum.getAverageTemp() <= 10){//below jacket temp
-            clothes.add(new File("data/clothes/snowy1.png"));
-            clothes.add(new File("data/clothes/cold1.png"));
+            clothes.add(new File(dataFolder + "clothes/snowy1.png"));
+            clothes.add(new File(dataFolder + "clothes/cold1.png"));
 
         }
 
         else { //warm
             if(Settings.getClothes()[1] == true && Settings.getClothes()[2] == true){ //wears shorts & vests
-                clothes.add(new File("data/clothes/warm1.png"));
-                clothes.add(new File("data/clothes/warm3.png"));
+                clothes.add(new File(dataFolder + "clothes/warm1.png"));
+                clothes.add(new File(dataFolder + "clothes/warm3.png"));
             }
             if(Settings.getClothes()[0] == true){ //wears dresses
-                clothes.add(new File("data/clothes/warm4.png"));
+                clothes.add(new File(dataFolder + "clothes/warm4.png"));
             }
             if(Settings.getClothes()[4] == true){ //wears jeans
-                clothes.add(new File("data/clothes/warm2.png"));
+                clothes.add(new File(dataFolder + "clothes/warm2.png"));
             }
             if(Settings.getClothes()[3] == true){ //wears skirts
-                clothes.add(new File("data/clothes/warm5.png"));
+                clothes.add(new File(dataFolder + "clothes/warm5.png"));
             }
-            clothes.add(new File("data/clothes/warm6.png"));
+            clothes.add(new File(dataFolder + "clothes/warm6.png"));
 
         }
 
@@ -71,27 +72,27 @@ public class Today {
         //accessories based on weather
         if (sum.getWeatherCode() == 4) {    //snowy
             if (sum.getAverageTemp() <= 10) {
-                accessories.add(new File("data/accessories/hat.png"));
+                accessories.add(new File(dataFolder + "accessories/hat.png"));
             }
-            accessories.add(new File("data/accessories/gloves.png"));
-            accessories.add(new File("data/accessories/scarf.png"));
+            accessories.add(new File(dataFolder + "accessories/gloves.png"));
+            accessories.add(new File(dataFolder + "accessories/scarf.png"));
         } else if (sum.getWeatherCode() == 0) {     //sunny
             if (sum.getAverageTemp() > 14) {
-                accessories.add(new File("data/accessories/sunglasses.png"));
+                accessories.add(new File(dataFolder + "accessories/sunglasses.png"));
             }
             if (sum.getAverageTemp() > 20) {
-                accessories.add(new File("data/accessories/sunhat.png"));
+                accessories.add(new File(dataFolder + "accessories/sunhat.png"));
             }
         } else if (sum.getWeatherCode() == 3) { //rainy
-            accessories.add(new File("data/accessories/raincoat.png"));
+            accessories.add(new File(dataFolder + "accessories/raincoat.png"));
         }
 
         //accessories based on settings
         if (sum.getAverageTemp() < Settings.getJacket() && sum.getWeatherCode() != 3) {
-            accessories.add(new File("data/accessories/jacket.png"));
+            accessories.add(new File(dataFolder + "accessories/jacket.png"));
         }
         if (sum.getRain() > Settings.getRain()) {
-            accessories.add(new File("data/accessories/umbrella.png"));
+            accessories.add(new File(dataFolder + "accessories/umbrella.png"));
         }
         return accessories;
     }
@@ -107,27 +108,27 @@ public class Today {
     public File setBackground(Summary sum) {
         if(sum.getPartOfDay() == "n"){ //night
             if (sum.getWeatherCode() == 3) {    //rainy
-                background = new File("data/backgrounds/nightrain.png");
+                background = new File(dataFolder + "backgrounds/nightrain.png");
             } else {
-                background = new File("data/backgrounds/night.png");
+                background = new File(dataFolder + "backgrounds/night.png");
             }
         }
         else { //day
             switch (sum.getWeatherCode()) {
                 case 0:
-                    background = new File("data/backgrounds/sunny.png");
+                    background = new File(dataFolder + "backgrounds/sunny.png");
                     break;
                 case 1:
-                    background = new File("data/backgrounds/windy.png");
+                    background = new File(dataFolder + "backgrounds/windy.png");
                     break;
                 case 2:
-                    background = new File("data/backgrounds/cloudy.png");
+                    background = new File(dataFolder + "backgrounds/cloudy.png");
                     break;
                 case 3:
-                    background = new File("data/backgrounds/rainy.png");
+                    background = new File(dataFolder + "backgrounds/rainy.png");
                     break;
                 case 4:
-                    background = new File("ddata/backgrounds/snowy.png");
+                    background = new File(dataFolder + "backgrounds/snowy.png");
                     break;
 
             }

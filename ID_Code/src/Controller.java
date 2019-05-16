@@ -18,6 +18,7 @@ public class Controller implements Initializable {
 
     @FXML
     private ImageView imageView;
+
     static int clothesIndex=0;
     @FXML
     static Image clothing;

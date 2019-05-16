@@ -1,5 +1,3 @@
-package thewearapp;
-
 // requires installation of JSON-java
 // TODO: comment
 // TODO: improve modularity, access modifiers

@@ -1,17 +1,20 @@
+import java.io.IOException;
 import java.util.Calendar;
+import java.util.List;
+import java.util.Map;
 
 public class Summary {
     private int rainProbability;
     private int weatherCode;
-    private int highTemp;
+    private double highTemp;
     private int averageTemp;
-    private int lowTemp;
+    private double lowTemp;
     private int apparentTemp;
     private String partOfDay;
     private int cloudCoverage;
     private API api_instance;
 
-    public Summary(){
+    public Summary() throws IOException {
         API api_instance = new API();
         List<Map<String,String>> daily_data = api_instance.getDaily();//hourly, 24 elements
         List<Map<String,String>> weekly_data = api_instance.getWeekly();//daily
@@ -19,27 +22,11 @@ public class Summary {
         Map<String,String> todays_data = weekly_data.get(0);
         this.rainProbability = Integer.parseInt(todays_data.get("probabilityOfRain"));
         this.weatherCode = Integer.parseInt(todays_data.get("weather_code"));
-        this.highTemp = Integer.parseInt(todays_data.get("feelsLikeTemp_MAX"));
-        this.averageTemp = Integer.parseInt(todays_data.get("temp"));
-        this.lowTemp = Integer.parseInt(todays_data.get("feelsLikeTemp_MIN"));
-        this.apparentTemp = Integer.parseInt(daily_data.get(0).get("feelsLikeTemp"));
-        this.cloudCoverage = Integer.parseInt(todays_data.get("cloud_coverage"));
-    }
-
-    public Summary(String day){
-        API api_instance = new API();
-        List<Map<String,String>> daily_data = api_instance.getDaily();//hourly, 24 elements
-        List<Map<String,String>> weekly_data = api_instance.getWeekly();//daily
-        //Days summary?
-        Map<String,String> todays_data = weekly_data.get(0);
-        this.rainProbability = Integer.parseInt(todays_data.get("probabilityOfRain"));
-        this.weatherCode = Integer.parseInt(todays_data.get("weather_code"));
-        this.highTemp = Integer.parseInt(todays_data.get("feelsLikeTemp_MAX"));
-        this.averageTemp = Integer.parseInt(todays_data.get("temp"));
-        this.lowTemp = Integer.parseInt(todays_data.get("feelsLikeTemp_MIN"));
-        this.apparentTemp = Integer.parseInt(daily_data.get(0).get("feelsLikeTemp"));
-        this.cloudCoverage = Integer.parseInt(todays_data.get("cloud_coverage"));
-
+        this.highTemp = Double.parseDouble(todays_data.get("feelsLikeTemp_MAX"));
+        this.averageTemp = (int)Double.parseDouble(todays_data.get("temp"));
+        this.lowTemp = Double.parseDouble(todays_data.get("feelsLikeTemp_MIN"));
+        this.apparentTemp = (int)Math.round(Double.parseDouble(daily_data.get(0).get("feelsLikeTemp")));
+        this.cloudCoverage = 0;
     }
 
     public int getRain() { return rainProbability;}
@@ -60,7 +47,7 @@ public class Summary {
         this.weatherCode = weatherCode;
     }
 
-    public int getHighTemp() {
+    public double getHighTemp() {
         return highTemp;
     }
 
@@ -76,7 +63,7 @@ public class Summary {
         this.averageTemp = averageTemp;
     }
 
-    public int getLowTemp() {
+    public double getLowTemp() {
         return lowTemp;
     }
 
