@@ -41,17 +41,17 @@ public class Today {
         }
 
         else { //warm
-            if(Settings.get_clothes()[1] == true && Settings.get_clothes()[2] == true){ //wears shorts & vests
+            if(Settings.getClothes()[1] == true && Settings.getClothes()[2] == true){ //wears shorts & vests
                 clothes.add(new File("data/clothes/warm1.png"));
                 clothes.add(new File("data/clothes/warm3.png"));
             }
-            if(Settings.get_clothes()[0] == true){ //wears dresses
+            if(Settings.getClothes()[0] == true){ //wears dresses
                 clothes.add(new File("data/clothes/warm4.png"));
             }
-            if(Settings.get_clothes()[4] == true){ //wears jeans
+            if(Settings.getClothes()[4] == true){ //wears jeans
                 clothes.add(new File("data/clothes/warm2.png"));
             }
-            if(Settings.get_clothes()[3] == true){ //wears skirts
+            if(Settings.getClothes()[3] == true){ //wears skirts
                 clothes.add(new File("data/clothes/warm5.png"));
             }
             clothes.add(new File("data/clothes/warm6.png"));
