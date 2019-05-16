@@ -8,17 +8,8 @@ public class Weekly {
     public Weekly() {
         days = new ArrayList<>();
 
-        Date dt = new Date();
-
         for (int i=0; i<7; i++) {
-            Calendar c = Calendar.getInstance();
-            c.setTime(dt);
-            c.add(Calendar.DATE, i);
-            dt = c.getTime();
-            Summary dayi = new Summary();
-            //Summary dayi = new Summary(dt);
-
-            //TODO: allow summary to take in a date to get the day's summary
+            Summary dayi = new Summary(i);
 
             days.add(i, dayi);
         }
@@ -30,16 +21,14 @@ public class Weekly {
     }
 
     public void updateDays(ArrayList<Summary> days) {
-        Date dt = new Date();
         for (int i=0; i<7; i++) {
-            Calendar c = Calendar.getInstance();
-            c.setTime(dt);
-            c.add(Calendar.DATE, i);
-            dt = c.getTime();
-            Summary dayi = new Summary();
-            //TODO: change to new summary constructor that takes in dt
+            Summary dayi = new Summary(i);
 
             days.set(i, dayi);
         }
+    }
+
+    public static void main(String[] args) {
+
     }
 }
