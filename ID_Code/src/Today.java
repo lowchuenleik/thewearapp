@@ -31,22 +31,17 @@ public class Today {
             clothes.add(File("data/clothes/snowy2.png"));
         }
 
-        else if(sum.getWeatherCode() == 3){ //rainy
-            if(sum.getAverageTemp() > Settings.get_jacket();) // rainy warm
-                clothes.add(File("data/clothes/rainWarm1.png"));
-                clothes.add(File("data/clothes/rainWarm2.png"));
-            else { //rainy cold
-                clothes.add(File("data/clothes/rainCold1.png"));
-                clothes.add(File("data/clothes/rainCold2.png"));
-            }
-        }
-
-        else if (sum.getLowTemp() < Settings.get_jacket();){ //cold (no rain)
+        else if (sum.getLowTemp() < Settings.get_jacket();){ //cold
             clothes.add(File("data/clothes/cold1.png"));
             clothes.add(File("data/clothes/cold2.png"));
         }
-        else { //warm (no rain)
+        else { //warm
+          if(Settings.get_clothes[1] == true && Settings.get_clothes[2] == true){ //wears shorts & vests
             clothes.add(File("data/clothes/warm1.png"));
+          }
+          if(Settings.getClothes[3] = true){ //wears dresses
+            clothes.add(File("data/clothes/warm4.png"));
+          }
             clothes.add(File("data/clothes/warm2.png"));
         }
 
