@@ -87,10 +87,10 @@ public class Today {
         }
 
         //accessories based on settings
-        if (sum.getAverageTemp() < Settings.get_jacket() && sum.getWeatherCode() != 3) {
+        if (sum.getAverageTemp() < Settings.getJacket() && sum.getWeatherCode() != 3) {
             accessories.add(new File("data/accessories/jacket.png"));
         }
-        if (sum.getRain() > Settings.get_rain()) {
+        if (sum.getRain() > Settings.getRain()) {
             accessories.add(new File("data/accessories/umbrella.png"));
         }
         return accessories;
