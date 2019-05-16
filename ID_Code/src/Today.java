@@ -2,6 +2,7 @@ import java.io.File;
 import java.util.LinkedList;
 
 public class Today {
+    private String day;
     private int genWeather;
     private LinkedList<File> clothes;
     private LinkedList<File> accessories;
@@ -11,12 +12,21 @@ public class Today {
     private static String dataFolder = "src/data/";
 
     public Today(Summary sum) {
+        this.day = sum.getDay();
         this.genWeather = sum.getWeatherCode();
         this.clothes = setClothes(sum);
         this.accessories = setAccessories(sum);
         this.temperature = sum.getAverageTemp();
         this.background = setBackground(sum);
         this.message = setMessage(sum);
+    }
+
+    public String getDay() {
+        return day;
+    }
+
+    public void setDay(String day) {
+        this.day = day;
     }
 
     public LinkedList<File> getClothes() {
