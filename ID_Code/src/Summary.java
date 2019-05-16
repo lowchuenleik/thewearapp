@@ -1,4 +1,6 @@
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.io.IOException;
 import java.text.ParseException;
@@ -36,6 +38,7 @@ public class Summary {
         this.lowTemp = (int)Double.parseDouble(todays_data.get("tempMIN"));
         this.apparentTemp = (int)Double.parseDouble(daily_data.get(0).get("feelsLikeTemp"));
         this.cloudCoverage = Integer.parseInt(todays_data.get("cloud_coverage"));
+        this.day_of_week = LocalDate.now().getDayOfWeek().name().substring(0,3);
     }
 
     public Summary(int day_of_week) {
@@ -74,6 +77,10 @@ public class Summary {
         // Date temp = new SimpleDateFormat("YYYY-MM-DD").parse(in_date);
         String out = new SimpleDateFormat("EE").format(temp);
         return out;
+    }
+
+    public int getRainProbability() {
+        return this.rainProbability;
     }
 
     public void setRainProbability(int rainProbability) {

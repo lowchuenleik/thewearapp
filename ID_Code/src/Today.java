@@ -101,7 +101,7 @@ public class Today {
         if (sum.getAverageTemp() < Settings.getJacket() && sum.getWeatherCode() != 3) {
             accessories.add(new File(dataFolder + "accessories/jacket.png"));
         }
-        if (sum.getRain() > Settings.getRain()) {
+        if (sum.getRainProbability() > Settings.getRain()) {
             accessories.add(new File(dataFolder + "accessories/umbrella.png"));
         }
         return accessories;

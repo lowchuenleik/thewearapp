@@ -33,9 +33,9 @@ public class Main extends Application {
     private String rightArrow;
 
     // text
-    private String day;
-    private String temp;
-    private String text;
+    private static String day;
+    private static String temp;
+    private static String text;
 
     // hourly screen (time, weather icon, temperature)
     private List<List<String>> hourlyData;
@@ -43,8 +43,9 @@ public class Main extends Application {
     // weekly screen (time, clothes icon, temperature)
     private List<List<String>> weeklyData;
 
+    // ACTUAL
     // TODO: initialise fields with Today class and maybe API class
-    public void initialise(Today today){
+    public static void initialise(Today today){
         clothes = today.getClothes();
         accessories = today.getAccessories();
         background = today.getBackground();
@@ -52,7 +53,7 @@ public class Main extends Application {
         text = today.getMessage();
 
         //TODO: today needs getDay()
-//        day = today.getDay();
+        day = today.getDay();
     }
 
     public void refresh(){
@@ -61,53 +62,46 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Summary summary = new Summary();
-        Today today = new Today(summary);
-        initialise(today);
+        //TESTING
+//        Summary summary = new Summary();
+//        Today today = new Today(summary);
+//        initialise(today);
+
+
         primaryStage.setTitle("thewearapp");
         loader = new FXMLLoader();
 
         // TESTING
-//        day = "Sat";
+        day = "Sat";
+        temp = "7°";
+        text = "It's cool weather, so feel free to bring along a jacket!";
+        clothes = new LinkedList<>();
+        clothes.add(new File("src\\data\\clothes\\cold1.png"));
+        clothes.add(new File("src\\data\\clothes\\cold2.png"));
+        Controller.accessory1Image = new Image(new FileInputStream("src\\data\\accessories\\gloves.png"));
+        Controller.accessory2Image = new Image(new FileInputStream("src\\data\\accessories\\hat.png"));
+        Image tmp = new Image(new FileInputStream("src\\data\\backgrounds\\cloudy.png"));
+
+        //ACTUAL
+//        if (accessories.size() >0) {
+//            Controller.accessory1Image = new Image(new FileInputStream(accessories.get(0).getPath()));
+//        }
+//        if(accessories.size() > 1) {
+//            Controller.accessory1Image = new Image(new FileInputStream(accessories.get(1).getPath()));
+//        }
+//        Image tmp = new Image(new FileInputStream(background));
 
         loader.getNamespace().put("day", day);
-
-        // TESTING
-//        temp = "7°";
-
         loader.getNamespace().put("temp", temp);
         loader.getNamespace().put("text", text);
-
-        // TESTING
-//        clothes = new LinkedList<>();
-//        clothes.add(new File("src\\data\\clothes\\cold1.png"));
 
         Controller.clothing = new Image("file:"+clothes.get(0).getPath());
         loader.getNamespace().put("clothing", Controller.clothing);
 
-        // TESTING
-//        clothes.add(new File("src\\data\\clothes\\cold2.png"));
 
-        //ACTUAL
-        if (accessories.size() >0) {
-            Controller.accessory1Image = new Image(new FileInputStream(accessories.get(0).getPath()));
-        }
-        if(accessories.size() > 1) {
-            Controller.accessory1Image = new Image(new FileInputStream(accessories.get(1).getPath()));
-        }
-
-        // TESTING
-//        Controller.accessory1Image = new Image(new FileInputStream("src\\data\\accessories\\gloves.png"));
-//        Controller.accessory2Image = new Image(new FileInputStream("src\\data\\accessories\\hat.png"));
 
         loader.getNamespace().put("accessory1Image", Controller.accessory1Image);
         loader.getNamespace().put("accessory2Image", Controller.accessory2Image);
-
-        //ACTUAL
-        Image tmp = new Image(new FileInputStream(background));
-
-        // TESTING
-//        Image tmp = new Image(new FileInputStream("src\\data\\backgrounds\\cloudy.png"));
 
 
         Controller.backgroundImage = new BackgroundImage(tmp, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
@@ -115,6 +109,8 @@ public class Main extends Application {
 
         // get format from fxml
         loader.setLocation(getClass().getResource("mainPage.fxml"));
+
+
 
 //        String image = Main.class.getResource("data\\background\\cloudy.png").toExternalForm();
 //        System.out.println(image);
