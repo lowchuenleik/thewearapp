@@ -1,5 +1,3 @@
-package thewearapp;
-
 // requires installation of JSON-java
 // TODO: comment
 // TODO: improve modularity, access modifiers
@@ -209,9 +207,12 @@ public class API {
             conditions.put("temp", hour.get("temp").toString());
             conditions.put("feelsLikeTemp_MAX", hour.get("app_max_temp").toString());
             conditions.put("feelsLikeTemp_MIN", hour.get("app_min_temp").toString());
+            conditions.put("tempMAX", hour.get("app_min_temp").toString());
+            conditions.put("tempMIN", hour.get("app_min_temp").toString());
             conditions.put("windSpeed", hour.get("wind_spd").toString());
             conditions.put("probabilityOfRain", hour.get("pop").toString());
-            conditions.put("date_time", hour.get("datetime").toString());
+            conditions.put("date", hour.get("valid_date").toString());
+            conditions.put("cloud_coverage",hour.get("clouds").toString());
 
             //Messy casting...Accessing nested JSON objects 
             JSONObject weather_detail = (JSONObject)hour.get("weather");
@@ -284,8 +285,13 @@ public class API {
         // test.truncateData();
 
         List<Map<String,String>> daily = test.getDaily();
-        System.out.println(daily);
+        //System.out.println(daily);
         List<Map<String,String>> weekly = test.getWeekly();
+        System.out.println(weekly);
+        for (Map<String,String> xx:weekly){
+            System.out.println("DATE TIME");
+            System.out.println(xx.get("date_time"));
+        }
         //test.setLastFetched(LocalDateTime.now());
 
         //System.out.println("fullJSON: " + test.fullJSON);
