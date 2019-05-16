@@ -29,18 +29,33 @@ public class Today {
             clothes.add(new File("data/clothes/snowy2.png"));
         }
 
-        else if (sum.getLowTemp() < Settings.get_jacket()){ //cold
+        else if (sum.getAverageTemp() <= 15 && sum.getAverageTemp() > 10){ //cold
             clothes.add(new File("data/clothes/cold1.png"));
             clothes.add(new File("data/clothes/cold2.png"));
         }
+
+        else if(sum.getAverageTemp() <= 10){//below jacket temp
+            clothes.add(new File("data/clothes/snowy1.png"));
+            clothes.add(new File("data/clothes/cold1.png"));
+
+        }
+
         else { //warm
-            if(Settings.getClothes[1] == true && Settings.getClothes[2] == true){ //wears shorts & vests
+            if(Settings.get_clothes()[1] == true && Settings.get_clothes()[2] == true){ //wears shorts & vests
                 clothes.add(new File("data/clothes/warm1.png"));
+                clothes.add(new File("data/clothes/warm3.png"));
             }
-            if(Settings.getClothes[3] = true){ //wears dresses
+            if(Settings.get_clothes()[0] == true){ //wears dresses
                 clothes.add(new File("data/clothes/warm4.png"));
             }
-            clothes.add(new File("data/clothes/warm2.png"));
+            if(Settings.get_clothes()[4] == true){ //wears jeans
+                clothes.add(new File("data/clothes/warm2.png"));
+            }
+            if(Settings.get_clothes()[3] == true){ //wears skirts
+                clothes.add(new File("data/clothes/warm5.png"));
+            }
+            clothes.add(new File("data/clothes/warm6.png"));
+
         }
 
         return clothes;
