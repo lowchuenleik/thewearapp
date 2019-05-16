@@ -1,76 +1,54 @@
 public class Settings{
-  private String location;
-  private boolean notficiations;
-  private boolean unit_celsius;
-  private static int jacket;
-  private static int rain;
-  private boolean[] clothes;
-
-  public Settings(){
-    // all fields have a default setting that  can be changed if the user wants to
-    location = "Cambridge";// should not be changed
-    //notficiations= true;// we're not using notifications in the design anymore should we change the design and ommit that
-    //unit_celsius= true;// if false use Fahreneheit
-
-    jacket = 20; // I like to wear a jacket below "..."
-    rain = 50;// I like to bring an umbrella above "..." cahnce of rain
-
-    //initialize array to default: person wears everything
-    for(int i=0; i<5; i++){
-      clothes[i]=true;
-    }
-  }
-    //array indices corresponding to diff clothes
-    //clothes[0] dresses
-    //clothes[1] shorts
-    //clothes[2] vests
-    //clothes[3] skirts
-    //clothes[4] jeans
-
-
-    /*methods
-    quite interlinked with gui so currently the code doesn't mean much*/
-/*
-    //notifications
-    private void set_notifications() {
-        if (notifications) {
-           notifications_button.setText("Yes");
-           //align the button to the right as in the design
-        }
-        else {
-            notifications_button.setText("No");
-            //align the button to the left as in the design
-        }
-    }
-
-    private boolean get_notifications (){
-        return  notifications;
-    }*/
+    //sets the values to defaults
+    private static String location = "Cambridge";
+    private static boolean unit_isCelcius = true;
+    private static int jacket = 20;
+    private static int rain = 50;
+    private static boolean[] clothes = resetClothes();
 
     //unit
-    private void set_unit() {}
-    private boolean get_unit_celsius (){
-        return  unit_celsius;
+    private void setUnit(boolean b) {
+        unit_isCelcius = b;
+    }
+    private boolean getUnit(){
+        return unit_isCelcius;
     }
 
     //jacket
-    public static void set_jacket(int t){
+    public static void setJacket(int t){
         jacket=t;
     }
-    public static int get_jacket(){
+    public static int getJacket(){
         return jacket;
     }
+
     //rain
-    public static void set_rain(int p){
+    public static void setRain(int p){
         rain=p;
     }
-
-    public static int get_rain(){
+    public static int getRain(){
         return rain;
     }
 
     //clothes array
-    //get
-    //set
+    public static boolean[] getClothes() {
+        return clothes;
+    }
+    public static void setClothes(boolean d, boolean sh, boolean v, boolean sk, boolean j) {
+        clothes[0] = d;  //dresses
+        clothes[1] = sh;  //shorts
+        clothes[2] = v;  //vests
+        clothes[3] = sk;  //skirts
+        clothes[4] = j;  //jeans
+    }
+
+    //initialises the clothes array to all true
+    public static boolean[] resetClothes() {
+        boolean[] clothes = new boolean[5];
+        for(int i=0; i<5; i++) {
+            clothes[i] = true;
+        }
+        return clothes;
+    }
 
 }

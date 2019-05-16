@@ -1,5 +1,3 @@
-package thewearapp;
-
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 
