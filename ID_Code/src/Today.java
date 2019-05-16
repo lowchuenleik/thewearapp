@@ -1,6 +1,4 @@
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.LinkedList;
 
 public class Today {
@@ -27,27 +25,28 @@ public class Today {
     public LinkedList<File> setClothes(Summary sum) {
         LinkedList<File> clothes = new LinkedList<>();
         if(sum.getWeatherCode() == 4){ //snowy (will always be cold)
-            clothes.add(File("data/clothes/snowy1.png"));
-            clothes.add(File("data/clothes/snowy2.png"));
+            clothes.add(new File("data/clothes/snowy1.png"));
+            clothes.add(new File("data/clothes/snowy2.png"));
         }
 
         else if(sum.getWeatherCode() == 3){ //rainy
-            if(sum.getAverageTemp() > Settings.get_jacket();) // rainy warm
-                clothes.add(File("data/clothes/rainWarm1.png"));
-                clothes.add(File("data/clothes/rainWarm2.png"));
-            else { //rainy cold
-                clothes.add(File("data/clothes/rainCold1.png"));
-                clothes.add(File("data/clothes/rainCold2.png"));
+            if(sum.getAverageTemp() > Settings.get_jacket()) { // rainy warm
+                clothes.add(new File("data/clothes/rainWarm1.png"));
+                clothes.add(new File("data/clothes/rainWarm2.png"));
+            } else { //rainy cold
+                clothes.add(new File("data/clothes/rainCold1.png"));
+                clothes.add(new File("data/clothes/rainCold2.png"));
             }
         }
 
-        else if (sum.getLowTemp() < Settings.get_jacket();){ //cold (no rain)
-            clothes.add(File("data/clothes/cold1.png"));
-            clothes.add(File("data/clothes/cold2.png"));
+        else if (sum.getLowTemp() < Settings.get_jacket()){ //cold (no rain)
+            clothes.add(new File("data/clothes/cold1.png"));
+            clothes.add(new File("data/clothes/cold2.png"));
         }
+
         else { //warm (no rain)
-            clothes.add(File("data/clothes/warm1.png"));
-            clothes.add(File("data/clothes/warm2.png"));
+            clothes.add(new File("data/clothes/warm1.png"));
+            clothes.add(new File("data/clothes/warm2.png"));
         }
 
         return clothes;
