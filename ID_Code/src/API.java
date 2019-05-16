@@ -1,3 +1,5 @@
+package thewearapp;
+
 // requires installation of JSON-java
 // TODO: comment
 // TODO: improve modularity, access modifiers
@@ -179,6 +181,7 @@ public class API {
             conditions.put("windSpeed", hour.get("wind_spd").toString());
             conditions.put("probabilityOfRain", hour.get("pop").toString());
             conditions.put("localTime", hour.get("timestamp_local").toString());
+            conditions.put("cloud_coverage",hour.get("clouds").toString());
 
             //Messy casting...Accessing nested JSON objects 
             JSONObject weather_detail = (JSONObject)hour.get("weather");
@@ -276,7 +279,7 @@ public class API {
         // params.put("city", "Cambridge");
         // params.put("country", "UK");
 
-        //test.setParams(params);setLa
+        // test.setParams(params);
         // test.setFullJSON(getHourly(apiKey, params));
         // test.truncateData();
 

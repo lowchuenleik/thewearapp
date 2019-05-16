@@ -32,10 +32,10 @@ public class Today {
         }
 
         else if(sum.getWeatherCode() == 3){ //rainy
-            if(sum.getAverageTemp() > Settings.get_jacket();) // rainy warm
+            if(sum.getAverageTemp() > Settings.get_jacket()){ // rainy warm
                 clothes.add(File("data/clothes/rainWarm1.png"));
                 clothes.add(File("data/clothes/rainWarm2.png"));
-            else { //rainy cold
+            } else { //rainy cold
                 clothes.add(File("data/clothes/rainCold1.png"));
                 clothes.add(File("data/clothes/rainCold2.png"));
             }
