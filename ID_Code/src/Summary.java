@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Calendar;
 import java.io.IOException;
 import java.text.ParseException;
@@ -9,15 +10,15 @@ import java.util.Map;
 public class Summary {
     private int rainProbability;
     private int weatherCode;
-    private int highTemp;
+    private double highTemp;
     private int averageTemp;
-    private int lowTemp;
+    private double lowTemp;
     private int apparentTemp;
     private String partOfDay;
     private int cloudCoverage;
     private String day_of_week;
 
-    public Summary(){
+    public Summary() {
         API api_instance = new API();
         List<Map<String,String>> daily_data = null;
         List<Map<String,String>> weekly_data = null;
@@ -31,7 +32,6 @@ public class Summary {
         Map<String,String> todays_data = weekly_data.get(0);
         this.rainProbability = Integer.parseInt(todays_data.get("probabilityOfRain"));
         this.weatherCode = Integer.parseInt(todays_data.get("weather_code"));
-        this.highTemp = (int)Double.parseDouble(todays_data.get("tempMAX"));
         this.averageTemp = (int)Double.parseDouble(todays_data.get("temp"));
         this.lowTemp = (int)Double.parseDouble(todays_data.get("tempMIN"));
         this.apparentTemp = (int)Double.parseDouble(daily_data.get(0).get("feelsLikeTemp"));
@@ -76,14 +76,6 @@ public class Summary {
         return out;
     }
 
-    public int getRain() {
-         return rainProbability;
-    }
-
-    public int getRainProbability() {
-        return rainProbability;
-    }
-
     public void setRainProbability(int rainProbability) {
         this.rainProbability = rainProbability;
     }
@@ -96,7 +88,7 @@ public class Summary {
         this.weatherCode = weatherCode;
     }
 
-    public int getHighTemp() {
+    public double getHighTemp() {
         return highTemp;
     }
 
@@ -116,7 +108,7 @@ public class Summary {
         this.averageTemp = averageTemp;
     }
 
-    public int getLowTemp() {
+    public double getLowTemp() {
         return lowTemp;
     }
 
