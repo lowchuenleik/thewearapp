@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="534.0" prefWidth="300.0" style=".root{-fx-background-image: url('file:src/data/background/cloudy.png');}" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<VBox alignment="CENTER" prefHeight="534.0" prefWidth="300.0" style=".root{-fx-background-image: url('file:src/data/background/cloudy.png');}" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
     <padding><Insets bottom="10" left="25" right="25" top="25" /></padding>
 
     <AnchorPane>
@@ -35,19 +35,19 @@
             </AnchorPane>
         </VBox>
         <VBox alignment="CENTER" prefHeight="150.0" GridPane.columnIndex="1" GridPane.fillHeight="true" GridPane.rowIndex="0">
-            <Text fill="white" scaleX="3" scaleY="3" text="day$">
-            <effect>
-               <DropShadow />
-            </effect></Text>
+            <Text fx:id="day" fill="white" scaleX="3" scaleY="3" text="day$">
+                <effect>
+                    <DropShadow />
+                </effect></Text>
             <Text text="" />
-            <Text fill="white" scaleX="2" scaleY="2" text="temp$">
-            <effect>
-               <DropShadow />
-            </effect></Text>
-            <Text fill="white" text="text$" textAlignment="CENTER" wrappingWidth="100">
-            <effect>
-               <DropShadow />
-            </effect></Text>
+            <Text fx:id="temp" fill="white" scaleX="2" scaleY="2" text="temp$">
+                <effect>
+                    <DropShadow />
+                </effect></Text>
+            <Text fx:id="text" fill="white" text="text$" textAlignment="CENTER" wrappingWidth="100">
+                <effect>
+                    <DropShadow />
+                </effect></Text>
         </VBox>
         <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
             <ImageView fx:id="accessory1" fitHeight="100.0" fitWidth="100.0" layoutX="61.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
@@ -61,14 +61,14 @@
                 </image>
             </ImageView>
         </VBox>
-      <columnConstraints>
-         <ColumnConstraints />
-         <ColumnConstraints />
-      </columnConstraints>
-      <rowConstraints>
-         <RowConstraints />
-         <RowConstraints />
-      </rowConstraints>
+        <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+        </rowConstraints>
     </GridPane>
 
     <AnchorPane>

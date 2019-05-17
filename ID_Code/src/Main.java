@@ -11,6 +11,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Main extends Application {
+    static Controller controller;
+    static SettingsController settingsController;
 
     static ScreenController screenController;
 
@@ -110,7 +112,8 @@ public class Main extends Application {
         // get format from fxml
         loader.setLocation(getClass().getResource("mainPage.fxml"));
 
-
+        controller = new Controller();
+        loader.setController(controller);
 
 //        String image = Main.class.getResource("data\\background\\cloudy.png").toExternalForm();
 //        System.out.println(image);
@@ -140,7 +143,13 @@ public class Main extends Application {
         screenController.addScreen("hourly", FXMLLoader.load(getClass().getResource("hourly.fxml")));
         screenController.addScreen("daily", FXMLLoader.load(getClass().getResource("daily.fxml")));
 //        screenController.addScreen("home", FXMLLoader.load(getClass().getResource( "mainPage.fxml" )));
-        screenController.addScreen("settings", FXMLLoader.load(getClass().getResource("settings.fxml")));
+
+        FXMLLoader settingsLoader = new FXMLLoader();
+        settingsLoader.setLocation(getClass().getResource("settings.fxml"));
+        settingsController = new SettingsController();
+        settingsLoader.setController(settingsController);
+        screenController.addScreen("settings", settingsLoader.load());
+//        screenController.addScreen("settings", FXMLLoader.load(getClass().getResource("settings.fxml")));
         primaryStage.show();
     }
 

@@ -1,7 +1,7 @@
 public class Settings{
     //sets the values to defaults
     private static String location = "Cambridge";
-    static boolean enableNotifications = true;
+    static boolean enableNotifications = false;
     static boolean unit_isCelcius = true;
     static int jacket = 20;
     static int rain = 50;
