@@ -8,10 +8,12 @@ public class Weekly {
     public Weekly() {
         days = new ArrayList<>();
 
+        //creates a summary for every day of the week
         for (int i=0; i<7; i++) {
             Summary dayi = new Summary(i);
             days.add(i, dayi);
         }
+
         this.days = days;
     }
 
@@ -26,6 +28,7 @@ public class Weekly {
     //RETURNS: none
     //This refreshes all the data held in the week object so that it is up-to-date
     public void updateWeek() {
+        //creates a new summary for each day and replaces the old one
         for (int i=0; i<7; i++) {
             Summary dayi = new Summary(i);
             days.set(i, dayi);
@@ -61,6 +64,7 @@ public class Weekly {
     public List<File> getWeatherIcons(){
         List<File> dayicons = new LinkedList<>();
         for (Summary d : days) {
+            //gets the weathercode for the day and sets the icon accordingly
             int wc = d.getWeatherCode();
 
             File icon = null;
