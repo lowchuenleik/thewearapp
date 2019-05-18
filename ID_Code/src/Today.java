@@ -11,6 +11,10 @@ public class Today {
     private String message;
     private static String dataFolder = "src/data/";
 
+    //CONSTRUCTOR: creates an object for the day that holds all the information
+    // about the weather on that day and suggested clothes, that the app needs.
+    // It requires a Summary object about the day to create the Today object for,
+    // to be passed to the constructor, so that the weather info can be accessed.
     public Today(Summary sum) {
         this.day = sum.getDay();
         this.genWeather = sum.getWeatherCode();
@@ -21,18 +25,30 @@ public class Today {
         this.message = setMessage(sum);
     }
 
+    //ARGUMENTS: none
+    //RETURNS: the name of the day of the week, as a string
     public String getDay() {
         return day;
     }
 
-    public void setDay(String day) {
+    //ARGUMENTS: the name of the day of the week, as a string
+    //RETURNS: none
+    //Allows the name of the day of the week to be updated; private to prevent
+    // accidental/malicious overwrites
+    private void setDay(String day) {
         this.day = day;
     }
 
+    //ARGUMENTS: none
+    //RETURNS: a list of files that correspond to the images of the clothes that the app
+    // is suggesting the user wears for the day
     public LinkedList<File> getClothes() {
         return clothes;
     }
 
+    //ARGUMENTS: a Summary object for the day that the Today object is about
+    //RETURNS: a list of files that correspond to the images of the clothes that the app
+    // is suggesting the user wears for the day
     public LinkedList<File> setClothes(Summary sum) {
         LinkedList<File> clothes = new LinkedList<>();
         if(sum.getWeatherCode() == 4){ //snowy (will always be cold)
@@ -72,10 +88,16 @@ public class Today {
         return clothes;
     }
 
+    //ARGUMENTS: none
+    //RETURNS: a list of all the files of the accessory images to suggest to the user
     public LinkedList<File> getAccessories() {
         return accessories;
     }
 
+    //ARGUMENTS: a Summary object for the day that the Today object is about
+    //RETURNS: a list of all the files of the accessory images to suggest to the user.
+    // This function decides the accessories to suggest and returns the list so that
+    // it can easily be stored in the accessories attribute or allow it to be updated.
     public LinkedList<File> setAccessories(Summary sum) {
         LinkedList<File> accessories = new LinkedList<>();
 
@@ -107,14 +129,23 @@ public class Today {
         return accessories;
     }
 
+    //ARGUMENTS: none
+    //RETURNS: an integer value of the average temperature for the day
     public int getTemperature() {
         return temperature;
     }
 
+    //ARGUMENTS: none
+    //RETURNS: the file of the background image that should be used as the background
+    // of the GUI
     public File getBackground() {
         return background;
     }
 
+    //ARGUMENTS: a Summary object for the day that the Today object is about
+    //RETURNS: the file of the background image that should be used as the background
+    // of the GUI. Again, this is returned to allow for easy updating and assigning to
+    // the background attribute.
     public File setBackground(Summary sum) {
         if(sum.getPartOfDay() == "n"){ //night
             if (sum.getWeatherCode() == 3) {    //rainy
@@ -147,10 +178,14 @@ public class Today {
         return background;
     }
 
+    //ARGUMENTS: none
+    //RETURNS: the message to be displayed to the user for the day, given as a string
     public String getMessage() {
         return message;
     }
 
+    //ARGUMENTS: a Summary object for the day that the Today object is about
+    //RETURNS: the message to be displayed to the user for the day, given as a string
     public String setMessage(Summary sum) {
         String msg = "";
         if (sum.getAverageTemp() < 0) {
