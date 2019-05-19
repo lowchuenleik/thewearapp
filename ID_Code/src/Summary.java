@@ -53,6 +53,7 @@ public class Summary {
         }
         //Days summary?
         Map<String,String> todays_data = weekly_data.get(day_of_week);
+        System.out.println(todays_data);
         this.rainProbability = Integer.parseInt(todays_data.get("probabilityOfRain"));
         this.weatherCode = Integer.parseInt(todays_data.get("weather_code"));
         this.highTemp = (int)Double.parseDouble(todays_data.get("tempMAX"));
@@ -63,20 +64,29 @@ public class Summary {
         this.apparentTemp =  temp;
         this.cloudCoverage = Integer.parseInt(todays_data.get("cloud_coverage"));
         String weekDay = todays_data.get("date");
+        System.out.println(weekDay);
         this.day_of_week = date_to_day(weekDay);
+        System.out.println(this.day_of_week);
     }
 
     public String date_to_day(String in_date){
-        Calendar cal = Calendar.getInstance();
-        Date temp = cal.getTime();
+//        Calendar cal = Calendar.getInstance();
+//        Date temp = cal.getTime();
         try{
-            temp = new SimpleDateFormat("YYYY-MM-DD").parse(in_date);
+            System.out.println("printing date_to_day");
+            System.out.println("in_date: " + in_date);
+            Date temp = new SimpleDateFormat("yyyy-MM-dd").parse(in_date);
+            System.out.println(temp);
+            String out = new SimpleDateFormat("EE").format(temp);
+            System.out.println(out);
+            return out;
         } catch (ParseException e){
             System.out.println("Error with date format...");
+            return Calendar.getInstance().getTime().toString();
         }
         // Date temp = new SimpleDateFormat("YYYY-MM-DD").parse(in_date);
-        String out = new SimpleDateFormat("EE").format(temp);
-        return out;
+//
+//        return out;
     }
 
     public int getRainProbability() {
