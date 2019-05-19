@@ -4,17 +4,47 @@ import java.util.*;
 public class Weekly {
     private ArrayList<Summary> days;
 
+    public static void main(String[] args) {
+//        Summary summary = new Summary(1);
+        Weekly weekly = new Weekly();
+        List<String> dayNames = weekly.getDayNames();
+        List<Integer> dayTemperatures = weekly.getTemperatures();
+        List<File> dayWeatherIcons = weekly.getWeatherIcons();
+
+        assert dayNames.size() == dayTemperatures.size();
+        assert dayTemperatures.size() == dayWeatherIcons.size();
+        for (String s: dayNames){
+            System.out.println(s);
+        }
+        for (Integer i: dayTemperatures){
+            System.out.println(i + " deg");
+        }
+        for (File f: dayWeatherIcons){
+            System.out.println(f.getPath());
+        }
+    }
+
     //CONSTRUCTOR: Weekly stores all of the days of the week as Summary objects
     public Weekly() {
         days = new ArrayList<>();
 
         //creates a summary for every day of the week
-        for (int i=0; i<7; i++) {
+        for (int i=1; i<7; i++) {
+//            System.out.println("day " + i);
             Summary dayi = new Summary(i);
-            days.add(i, dayi);
+//            System.out.println(dayi.getDay());
+//            System.out.println(dayi.getAverageTemp());
+            days.add(dayi);
         }
+//        for (int j=0; j<days.size(); j++){
+//            System.out.println("\nChecking " + j + "th summary...");
+//            Summary day = days.get(j);
+//            System.out.println(day.getDay());
+//            System.out.println(day.getAverageTemp());
+//            System.out.println(day.getApparentTemp());
+//        }
 
-        this.days = days;
+//        this.days = days;
     }
 
     //ARGUMENTS: none
@@ -29,7 +59,7 @@ public class Weekly {
     //This refreshes all the data held in the week object so that it is up-to-date
     public void updateWeek() {
         //creates a new summary for each day and replaces the old one
-        for (int i=0; i<7; i++) {
+        for (int i=0; i<days.size(); i++) {
             Summary dayi = new Summary(i);
             days.set(i, dayi);
         }
