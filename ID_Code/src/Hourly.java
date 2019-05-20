@@ -1,58 +1,34 @@
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
-<<<<<<< HEAD
-import java.util.List;
-import java.time.LocalDate;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.LinkedList;
-=======
 import java.util.*;
-import java.text.SimpleDateFormat;
->>>>>>> ec7aa5ad08b8d99ecb4209fe1b524ee749685dad
 
 public class Hourly {
     private int hour;
     private int temp;
     private File weathericon;
     private int weathercode;
-<<<<<<< HEAD
 
-    // TODO: Yulong here. Can you try including three getter methods, as described below?
-    // (@Chuen: you should be able to easily get the hours and temp from the hourly forecast)
-    // preferably String so I can just show them e.g. "01:00" or "13:00"
-    // Otherwise, List<Integer> also works, e.g. integer 1 means 1am, integer 23 means 11pm
-    public List<String> getHours(){
-        List<Map<String,String>> data = hourlydata_augmented();//24 hour time
-        List<String> output = new LinkedList<>();
-        for (Map<String,String> entry: data){
-            temp = (int)Double.parseDouble(entry.get("hour"));
-            Integer twentyfourhtime = Integer.parseInt(new SimpleDateFormat("HH").format(temp));
-            output.add(0,Integer.toString(twentyfourhtime));//preprends it!
+    public static void main(String[] args) {
+        List<String> hours = Hourly.getHours();
+        List<Integer> temperatures = Hourly.getTemperatures();
+        List<File> weatherIcons = Hourly.getWeatherIcons();
+
+        System.out.println(hours.size());
+        System.out.println(temperatures.size());
+        System.out.println(weatherIcons.size());
+
+        for (String h: hours){
+            System.out.println(h);
         }
-        return output;
-    }
-    // in Celsius
-    public List<Integer> getTemperatures(){
-        List<Map<String,String>> data = hourlydata_augmented();
-        List<Integer> output = new LinkedList<>();
-        for (Map<String,String> entry: data){
-            output.add(0,(int)Double.parseDouble(entry.get("feelsLikeTemp")));//preprends it!
+        for (Integer i: temperatures){
+            System.out.println(i);
         }
-        return output;
+        for (File f: weatherIcons){
+            System.out.println(f.getPath());
+        }
     }
-    public List<File> getWeatherIcons(){//not sure what you mean by get weather icons?
-        List<Map<String,String>> data = hourlydata_augmented();
-        return null;
-    }
-=======
->>>>>>> ec7aa5ad08b8d99ecb4209fe1b524ee749685dad
-    
 
     //CONSTRUCTOR: Hourly is an object that allows the weather information about each
     // hour in the day to be stored in one object.
@@ -71,29 +47,15 @@ public class Hourly {
         } catch (IOException e){
             System.out.println("ERROR, PLEASE DEBUG: " + e.getMessage());
         }
-<<<<<<< HEAD
-        for (Map<String,String> entry: daily_data){
-            intime = entry.get("localTime");
-            try{
-                temp = new SimpleDateFormat("YYYY-MM-DD'T'HH:mm:ss").parse(intime);
-            } catch (ParseException e){
-                System.out.println("ERROR, PLEASE DEBUG");
-            }
-            Integer twentyfourhtime = Integer.parseInt(new SimpleDateFormat("HH").format(temp));
-            entry.put("hour",twentyfourhtime.toString());
-            if (twentyfourhtime==hour){
-                selected_hour = entry;
-=======
         try {
             for (Map<String, String> entry : daily_data) {
                 intime = entry.get("localTime");
-                temp = new SimpleDateFormat("YYYY-MM-DD'T'HH:mm:ss").parse(intime);
+                temp = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(intime);
                 Integer twentyfourhtime = Integer.parseInt(new SimpleDateFormat("HH").format(temp));
                 entry.put("hour", twentyfourhtime.toString());
                 if (twentyfourhtime == hour) {
                     selected_hour = entry;
                 }
->>>>>>> ec7aa5ad08b8d99ecb4209fe1b524ee749685dad
             }
         } catch (ParseException pe) {
             System.out.println("PARSE ERROR! " + pe.getCause());
@@ -152,11 +114,7 @@ public class Hourly {
     //Makes another call to the API to refresh the data and update the temperature
     public void updateTemp() {
         Map<String,String> freshdata = refreshdata();
-<<<<<<< HEAD
-        this.temp = (int)Double.parseDouble(freshdata.get("feelsLikeTemp")); 
-=======
         this.temp = Integer.parseInt(freshdata.get("feelsLikeTemp"));
->>>>>>> ec7aa5ad08b8d99ecb4209fe1b524ee749685dad
     }
 
     //ARGUMENTS: none
@@ -200,11 +158,7 @@ public class Hourly {
     //Makes another call to the API to refresh the data and update the weathercode
     public void updateWeathercode() {
         Map<String,String> freshdata = refreshdata();
-<<<<<<< HEAD
-        this.weathercode = (int)Double.parseDouble(freshdata.get("weather_code"));
-=======
         this.weathercode = Integer.parseInt(freshdata.get("weather_code"));
->>>>>>> ec7aa5ad08b8d99ecb4209fe1b524ee749685dad
     }
 
     //ARGUMENTS: none
@@ -220,29 +174,15 @@ public class Hourly {
         } catch (IOException e){
             System.out.println("ERROR, PLEASE DEBUG");
         }
-<<<<<<< HEAD
-        for (Map<String,String> entry: daily_data){
-            intime = entry.get("localTime");
-            try{
-                temp = new SimpleDateFormat("YYYY-MM-DD'T'HH:mm:ss").parse(intime);
-            } catch (ParseException e){
-                System.out.println("ERROR, PLEASE DEBUG");
-            }
-            Integer twentyfourhtime = Integer.parseInt(new SimpleDateFormat("HH").format(temp));
-            entry.put("hour",twentyfourhtime.toString());
-            if (twentyfourhtime==hour){
-                selected_hour = entry;
-=======
         try {
             for (Map<String, String> entry : daily_data) {
                 intime = entry.get("localTime");
-                temp = new SimpleDateFormat("YYYY-MM-DD'T'HH:mm:ss").parse(intime);
+                temp = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(intime);
                 Integer twentyfourhtime = Integer.parseInt(new SimpleDateFormat("HH").format(temp));
                 entry.put("hour", twentyfourhtime.toString());
                 if (twentyfourhtime == hour) {
                     selected_hour = entry;
                 }
->>>>>>> ec7aa5ad08b8d99ecb4209fe1b524ee749685dad
             }
         } catch (ParseException pe) {
             System.out.println("PARSE ERROR: " + pe.getCause());
@@ -263,27 +203,17 @@ public class Hourly {
         } catch (IOException e){
             System.out.println("ERROR, PLEASE DEBUG");
         }
-<<<<<<< HEAD
-        for (Map<String,String> entry: daily_data){
-            intime = entry.get("localTime");
-            try{
-                temp = new SimpleDateFormat("YYYY-MM-DD'T'HH:mm:ss").parse(intime);
-            } catch (ParseException e){
-                System.out.println("ERROR, PLEASE DEBUG");
-            }
-            Integer twentyfourhtime = Integer.parseInt(new SimpleDateFormat("HH:mm").format(temp));
-            entry.put("hour",twentyfourhtime.toString());
-=======
         try {
             for (Map<String, String> entry : daily_data) {
                 intime = entry.get("localTime");
-                temp = new SimpleDateFormat("YYYY-MM-DD'T'HH:mm:ss").parse(intime);
-                Integer twentyfourhtime = Integer.parseInt(new SimpleDateFormat("HH:mm").format(temp));
-                entry.put("hour", twentyfourhtime.toString());
+                temp = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(intime);
+                System.out.println(temp);
+                System.out.println(new SimpleDateFormat("HH:mm").format(temp));
+                String twentyfourtime = new SimpleDateFormat("HH:mm").format(temp);
+                entry.put("hour", twentyfourtime);
             }
         } catch (ParseException pe) {
             System.out.println("PARSE ERROR: " + pe.getCause());
->>>>>>> ec7aa5ad08b8d99ecb4209fe1b524ee749685dad
         }
         return daily_data;
     }
@@ -294,15 +224,16 @@ public class Hourly {
         List<Map<String,String>> data = hourlydata_augmented();//24 hour time
         List<String> output = new LinkedList<>();
         for (Map<String,String> entry: data){
-            String h = String.valueOf((int)Double.parseDouble(entry.get("hour")));
-            if (h.length() == 1) {
-                h = "0"+h+":00";
-            } else if (h.length() == 2) {
-                h = h+":00";
-            } else {
-                System.out.println("ERROR IN HOUR OUTPUTS");
-            }
-            output.add(0,h);  //prepends it!
+            String h = entry.get("hour");
+//            String h = String.valueOf((int)Double.parseDouble(entry.get("hour")));
+//            if (h.length() == 1) {
+//                h = "0"+h+":00";
+//            } else if (h.length() == 2) {
+//                h = h+":00";
+//            } else {
+//                System.out.println("ERROR IN HOUR OUTPUTS");
+//            }
+            output.add(/*0,*/h);  //prepends it!  -- CHANGED TO APPEND
         }
 
         return output;
@@ -315,7 +246,7 @@ public class Hourly {
         List<Map<String,String>> data = hourlydata_augmented();
         List<Integer> output = new LinkedList<>();
         for (Map<String,String> entry: data){
-            output.add(0,(int)Double.parseDouble(entry.get("feelsLikeTemp")));//preprends it!
+            output.add(/*0,*/(int)Double.parseDouble(entry.get("feelsLikeTemp")));//preprends it! -- CHANGED TO APPEND
         }
         return output;
     }
@@ -341,7 +272,7 @@ public class Hourly {
                 case 4: icon = new File("src/data/hourlyicons/snowy.png");
                     break;
             }
-            output.add(0, icon);    //prepends the image
+            output.add(/*0,*/ icon);    //prepends the image --  -- CHANGED TO APPEND
         }
 
         return output;

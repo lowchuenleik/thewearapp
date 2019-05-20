@@ -11,101 +11,15 @@
   <children>
     <AnchorPane id="AnchorPane" layoutX="12.0" layoutY="8.0" prefHeight="66.0" prefWidth="274.0">
       <children>
-        <Button layoutX="0.0" layoutY="15.0" mnemonicParsing="false" text="home" />
-        <Button layoutX="184.0" layoutY="14.0" mnemonicParsing="false" text="settings" />
-        <Text fill="WHITE" layoutX="99.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight:bold;&#10;-fx-font-size: 30;" text="MON" />
+        <Button layoutX="0.0" layoutY="15.0" mnemonicParsing="false" text="home" onAction="#toHome"/>
+        <Button layoutX="184.0" layoutY="14.0" mnemonicParsing="false" text="settings" onAction="#toSettings"/>
+        <Text fx:id="hourlyTitle" fill="WHITE" layoutX="99.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight:bold;&#10;-fx-font-size: 30;"/>
       </children>
     </AnchorPane>
-    <ScrollPane layoutX="3.0" layoutY="53.0" prefHeight="479.0" prefWidth="295.0">
-      <AnchorPane>
-      <AnchorPane layoutX="4.0" layoutY="66.0" prefHeight="58.0" prefWidth="293.0" style=" -fx-border-color: white;&#10;-fx-border-width: 5px;&#10;-fx-background-color: #848689&#10;&#10;">
-      <children>
-        <ImageView fitHeight="43.0" fitWidth="57.33333333333333" layoutX="129.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-          <image>
-            <Image url="icon" />
-          </image>
-        </ImageView>
-        <Text fill="WHITE" layoutX="191.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight:bold;&#10;-fx-font-size: 30;" text="12 C" />
-        <Text fill="WHITE" layoutX="24.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight:bold;&#10;-fx-font-size: 30;" text="09:00" />
-      </children>
-    </AnchorPane>
-    <AnchorPane layoutX="4.0" layoutY="124.0" prefHeight="58.0" prefWidth="293.0" style=" -fx-border-color: white;&#10;-fx-border-width: 5px;&#10;-fx-background-color: #848689&#10;&#10;">
-      <children>
-        <ImageView fitHeight="43.0" fitWidth="57.33333333333333" layoutX="129.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-          <image>
-            <Image url="icon" />
-          </image>
-        </ImageView>
-        <Text fill="WHITE" layoutX="191.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight:bold;&#10;-fx-font-size: 30;" text="13 C" />
-        <Text fill="WHITE" layoutX="24.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight:bold;&#10;-fx-font-size: 30;" text="10:00" />
-      </children>
-    </AnchorPane>
-    <AnchorPane layoutX="4.0" layoutY="181.0" prefHeight="58.0" prefWidth="293.0" style=" -fx-border-color: white;&#10;-fx-border-width: 5px;&#10;-fx-background-color: #848689&#10;&#10;">
-      <children>
-        <ImageView fitHeight="43.0" fitWidth="57.33333333333333" layoutX="129.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-          <image>
-            <Image url="icon" />
-          </image>
-        </ImageView>
-        <Text fill="WHITE" layoutX="191.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight:bold;&#10;-fx-font-size: 30;" text="13 C" />
-        <Text fill="WHITE" layoutX="24.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight:bold;&#10;-fx-font-size: 30;" text="11:00" />
-      </children>
-    </AnchorPane>
-    <AnchorPane layoutX="4.0" layoutY="239.0" prefHeight="58.0" prefWidth="293.0" style=" -fx-border-color: white;&#10;-fx-border-width: 5px;&#10;-fx-background-color: #848689&#10;&#10;">
-      <children>
-        <ImageView fitHeight="43.0" fitWidth="57.33333333333333" layoutX="129.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-          <image>
-            <Image url="icon" />
-          </image>
-        </ImageView>
-        <Text fill="WHITE" layoutX="191.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight:bold;&#10;-fx-font-size: 30;" text="15 C" />
-        <Text fill="WHITE" layoutX="24.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight:bold;&#10;-fx-font-size: 30;" text="12:00" />
-      </children>
-    </AnchorPane>
-    <AnchorPane layoutX="4.0" layoutY="297.0" prefHeight="58.0" prefWidth="293.0" style=" -fx-border-color: white;&#10;-fx-border-width: 5px;&#10;-fx-background-color: #848689&#10;&#10;">
-      <children>
-        <ImageView fitHeight="43.0" fitWidth="57.33333333333333" layoutX="129.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-          <image>
-            <Image url="icon" />
-          </image>
-        </ImageView>
-        <Text fill="WHITE" layoutX="191.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight:bold;&#10;-fx-font-size: 30;" text="17 C" />
-        <Text fill="WHITE" layoutX="24.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight:bold;&#10;-fx-font-size: 30;" text="13:00" />
-      </children>
-    </AnchorPane>
-    <AnchorPane layoutX="4.0" layoutY="355.0" prefHeight="58.0" prefWidth="293.0" style=" -fx-border-color: white;&#10;-fx-border-width: 5px;&#10;-fx-background-color: #848689&#10;&#10;">
-      <children>
-        <ImageView fitHeight="43.0" fitWidth="57.33333333333333" layoutX="129.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-          <image>
-            <Image url="icon" />
-          </image>
-        </ImageView>
-        <Text fill="WHITE" layoutX="191.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight:bold;&#10;-fx-font-size: 30;" text="18 C" />
-        <Text fill="WHITE" layoutX="24.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight:bold;&#10;-fx-font-size: 30;" text="14:00" />
-      </children>
-    </AnchorPane>
-    <AnchorPane layoutX="4.0" layoutY="412.0" prefHeight="58.0" prefWidth="293.0" style=" -fx-border-color: white;&#10;-fx-border-width: 5px;&#10;-fx-background-color: #848689&#10;&#10;">
-      <children>
-        <ImageView fitHeight="43.0" fitWidth="57.33333333333333" layoutX="129.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-          <image>
-            <Image url="icon" />
-          </image>
-        </ImageView>
-        <Text fill="WHITE" layoutX="191.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight:bold;&#10;-fx-font-size: 30;" text="18 C" />
-        <Text fill="WHITE" layoutX="24.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight:bold;&#10;-fx-font-size: 30;" text="15:00" />
-      </children>
-    </AnchorPane>
-    <AnchorPane layoutX="4.0" layoutY="470.0" prefHeight="58.0" prefWidth="293.0" style=" -fx-border-color: white;&#10;-fx-border-width: 5px;&#10;-fx-background-color: #848689&#10;&#10;">
-      <children>
-        <ImageView fitHeight="43.0" fitWidth="57.33333333333333" layoutX="129.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-          <image>
-            <Image url="icon" />
-          </image>
-        </ImageView>
-        <Text fill="WHITE" layoutX="191.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight:bold;&#10;-fx-font-size: 30;" text="21 C" />
-        <Text fill="WHITE" layoutX="24.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight:bold;&#10;-fx-font-size: 30;" text="16:00" />
-      </children>
-    </AnchorPane>
+    <ScrollPane fx:id="scrollpaneHours" layoutX="3.0" layoutY="53.0" prefHeight="479.0" prefWidth="295.0">
+      <AnchorPane fx:id="anchorpaneHours" prefHeight="656.0" prefWidth="297.0">
+
+
       </AnchorPane>
     </ScrollPane>
   </children>

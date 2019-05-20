@@ -84,7 +84,7 @@ public class Summary {
             System.out.println("Error with date format...");
             return Calendar.getInstance().getTime().toString();
         }
-        // Date temp = new SimpleDateFormat("YYYY-MM-DD").parse(in_date);
+        // Date temp = new SimpleDateFormat("yyyy-MM-dd").parse(in_date);
 //
 //        return out;
     }

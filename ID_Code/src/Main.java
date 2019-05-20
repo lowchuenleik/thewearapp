@@ -1,4 +1,5 @@
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -13,6 +14,8 @@ import java.util.List;
 public class Main extends Application {
     static Controller controller;
     static SettingsController settingsController;
+    static HourlyController hourlyController;
+    static DailyController dailyController;
 
     static ScreenController screenController;
 
@@ -35,7 +38,7 @@ public class Main extends Application {
     private String rightArrow;
 
     // text
-    private static String day;
+    static String day;
     private static String temp;
     private static String text;
 
@@ -137,20 +140,32 @@ public class Main extends Application {
         Scene scene = new Scene(mainPage, this.width, this.height);
 //        scene.setFill(Color.TRANSPARENT);
         primaryStage.setScene(scene);
+        primaryStage.show();
+
 //        scene.getStylesheets().add(Main.class.getResource("Main.css").toExternalForm());
         screenController = new ScreenController(scene);
         screenController.addScreen("home", mainPage);
-        screenController.addScreen("hourly", FXMLLoader.load(getClass().getResource("hourly.fxml")));
-        screenController.addScreen("daily", FXMLLoader.load(getClass().getResource("daily.fxml")));
+
 //        screenController.addScreen("home", FXMLLoader.load(getClass().getResource( "mainPage.fxml" )));
 
+        FXMLLoader hourlyLoader = new FXMLLoader();
+        hourlyController = new HourlyController();
+        hourlyLoader.setController(hourlyController);
+        hourlyLoader.setLocation(getClass().getResource("hourly.fxml"));
+        screenController.addScreen("hourly", hourlyLoader.load());
+
+        FXMLLoader dailyLoader = new FXMLLoader();
+        dailyController = new DailyController();
+        dailyLoader.setController(dailyController);
+        dailyLoader.setLocation(getClass().getResource("daily.fxml"));
+        screenController.addScreen("daily", dailyLoader.load());
+
         FXMLLoader settingsLoader = new FXMLLoader();
-        settingsLoader.setLocation(getClass().getResource("settings.fxml"));
         settingsController = new SettingsController();
         settingsLoader.setController(settingsController);
+        settingsLoader.setLocation(getClass().getResource("settings.fxml"));
         screenController.addScreen("settings", settingsLoader.load());
 //        screenController.addScreen("settings", FXMLLoader.load(getClass().getResource("settings.fxml")));
-        primaryStage.show();
     }
 
     public static void main(String[] args) {
