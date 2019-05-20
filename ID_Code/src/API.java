@@ -45,10 +45,6 @@ public class API {
         this.lastFetched = lastFetched;
     }
 
-    // public void setParams (Map<String, String> params){
-    //     this.params = params;
-    // }
-
     public void setTruncatedData (List<Map<String, String>> truncatedData){
         this.truncatedData = truncatedData;
     }
@@ -118,18 +114,6 @@ public class API {
         List<Map<String,String>> weekly_data = truncate_data_daily(jsonobj);
 
         return weekly_data;
-    }
-
-    // can be used to find specific pieces of data
-    // TODO: fill in
-    public void getXX(Map<String, String> params) throws IOException {
-        LocalDateTime now = LocalDateTime.now();
-        if (Duration.between(now, lastFetched).getSeconds() > 3600) {
-            fullJSON = retrieve(apiKey, params);
-            //truncateData();
-            lastFetched = now;
-        }
-        // TODO: find weather forecast data
     }
 
     // truncates the fullJSON object that was fetched, into an hourly list of various attributes (local time, temp, wind speed, rain)

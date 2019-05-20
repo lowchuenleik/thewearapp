@@ -16,7 +16,7 @@
 
     <AnchorPane>
         <Button onAction="#refresh" text="refresh" AnchorPane.leftAnchor="1"/>
-        <Button onAction="#toSettings" text="settings" AnchorPane.rightAnchor="1" />
+        <Button fx:id="settingsButton" onAction="#toSettings" AnchorPane.rightAnchor="1" />
     </AnchorPane>
 
     <GridPane fx:id="gp1" alignment="BOTTOM_CENTER" hgap="10" prefHeight="355.0" prefWidth="260.0" vgap="10" xmlns:fx="http://javafx.com/fxml">

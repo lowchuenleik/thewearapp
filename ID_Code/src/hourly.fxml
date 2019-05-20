@@ -2,25 +2,19 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
-
 <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.9999000000025" prefWidth="300.0" style="-fx-background-color: #848689;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <AnchorPane id="AnchorPane" layoutX="12.0" layoutY="8.0" prefHeight="66.0" prefWidth="274.0">
+    <AnchorPane fx:id="header" id="AnchorPane" layoutX="12.0" layoutY="8.0" prefHeight="66.0" prefWidth="274.0">
       <children>
         <Button layoutX="0.0" layoutY="15.0" mnemonicParsing="false" text="home" onAction="#toHome"/>
-        <Button layoutX="184.0" layoutY="14.0" mnemonicParsing="false" text="settings" onAction="#toSettings"/>
+        <Button fx:id="settingsButton" layoutX="184.0" layoutY="14.0" mnemonicParsing="false" onAction="#toSettings"/>
         <Text fx:id="hourlyTitle" fill="WHITE" layoutX="99.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight:bold;&#10;-fx-font-size: 30;"/>
       </children>
     </AnchorPane>
     <ScrollPane fx:id="scrollpaneHours" layoutX="3.0" layoutY="53.0" prefHeight="479.0" prefWidth="295.0">
-      <AnchorPane fx:id="anchorpaneHours" prefHeight="656.0" prefWidth="297.0">
-
-
-      </AnchorPane>
+      <AnchorPane fx:id="anchorpaneHours" prefHeight="656.0" prefWidth="297.0"/>
     </ScrollPane>
   </children>
 </AnchorPane>

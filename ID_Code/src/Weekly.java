@@ -13,15 +13,18 @@ public class Weekly {
 
         assert dayNames.size() == dayTemperatures.size();
         assert dayTemperatures.size() == dayWeatherIcons.size();
-        for (String s: dayNames){
-            System.out.println(s);
-        }
-        for (Integer i: dayTemperatures){
-            System.out.println(i + " deg");
-        }
-        for (File f: dayWeatherIcons){
-            System.out.println(f.getPath());
-        }
+        System.out.println(dayNames);
+        System.out.println(dayWeatherIcons);
+        System.out.println(dayTemperatures);
+//        for (String s: dayNames){
+//            System.out.println(s);
+//        }
+//        for (Integer i: dayTemperatures){
+//            System.out.println(i + " deg");
+//        }
+//        for (File f: dayWeatherIcons){
+//            System.out.println(f.getPath());
+//        }
     }
 
     //CONSTRUCTOR: Weekly stores all of the days of the week as Summary objects
@@ -70,7 +73,7 @@ public class Weekly {
     public List<String> getDayNames(){
         List<String> daynames = new LinkedList<>();
         for (Summary d : days) {
-            daynames.add(0, d.getDay()); //prepends the list
+            daynames.add(/*0,*/ d.getDay()); //prepends the list
         }
 
         return daynames;
@@ -82,7 +85,7 @@ public class Weekly {
     public List<Integer> getTemperatures(){
         List<Integer> daytemps = new LinkedList<>();
         for (Summary d : days) {
-            daytemps.add(0, d.getAverageTemp());
+            daytemps.add(/*0,*/ d.getAverageTemp());
         }
 
         return daytemps;
@@ -111,7 +114,7 @@ public class Weekly {
                     break;
             }
 
-            dayicons.add(0, icon);
+            dayicons.add(/*0,*/ icon);
         }
 
         return dayicons;

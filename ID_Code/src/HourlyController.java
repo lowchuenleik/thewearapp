@@ -1,6 +1,7 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -28,6 +29,11 @@ public class HourlyController implements Initializable {
     private AnchorPane firstHour;
 
     @FXML
+    private Button settingsButton;
+    @FXML
+    private AnchorPane header;
+
+    @FXML
     public void toHome(ActionEvent event){
         Main.controller.toHome(event);
     }
@@ -39,6 +45,16 @@ public class HourlyController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            ImageView settingsIcon = new ImageView(new Image(new FileInputStream("src/data/gear.png")));
+            settingsIcon.setPreserveRatio(true);
+            settingsIcon.setFitHeight(25.0);
+            settingsButton.setGraphic(settingsIcon);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            System.out.println("src/data/gear.png not found");
+        }
+
         List<String> hours = Hourly.getHours();
         List<Integer> temperatures = Hourly.getTemperatures();
         List<File> weatherIcons = Hourly.getWeatherIcons();
