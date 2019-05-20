@@ -1,36 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d25f41e5-2067-400c-88ea-380fb99929bf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ID_Code/API.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ID_Code/API.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ID_Code/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ID_Code/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ID_Code/Hourly.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ID_Code/Hourly.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ID_Code/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ID_Code/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ID_Code/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ID_Code/Main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ID_Code/ParameterStringBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ID_Code/Summary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ID_Code/Summary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ID_Code/Weekly.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ID_Code/Weekly.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ID_Code/hourly.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ID_Code/hourly.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ID_Code/mainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ID_Code/mainPage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/API.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DailyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DailyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Hourly.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hourly.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HourlyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HourlyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ParameterStringBuilder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Summary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Summary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Today.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Today.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Weekly.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Weekly.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/gear.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/gear.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/greycog.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/whitecog.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mainPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/mainPage.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="d25f41e5-2067-400c-88ea-380fb99929bf" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +15,7 @@
         <entry file="file://$PROJECT_DIR$/src/mainPage.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
+            <state relative-caret-position="595">
               <caret line="35" column="77" selection-start-line="35" selection-start-column="77" selection-end-line="35" selection-end-column="77" />
             </state>
           </provider>
@@ -53,7 +24,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DailyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-825">
+            <state relative-caret-position="425">
               <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -65,8 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HourlyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="73" column="46" lean-forward="true" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
+            <state relative-caret-position="884">
+              <caret line="73" column="46" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,7 +48,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
+            <state relative-caret-position="1462">
               <caret line="96" selection-start-line="96" selection-end-line="96" />
             </state>
           </provider>
@@ -87,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/src/Summary.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+              <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -95,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SettingsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="43" column="21" lean-forward="true" selection-start-line="43" selection-end-line="44" />
+            <state relative-caret-position="578">
+              <caret line="43" column="21" selection-start-line="43" selection-end-line="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Today.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="63" column="63" lean-forward="true" selection-start-line="63" selection-start-column="63" selection-end-line="63" selection-end-column="63" />
+            <state relative-caret-position="986">
+              <caret line="65" column="68" lean-forward="true" selection-start-line="65" selection-start-column="68" selection-end-line="65" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -116,7 +87,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Weekly.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
+            <state relative-caret-position="1326">
               <caret line="81" column="25" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -125,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/API.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="72" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
+            <state relative-caret-position="303">
+              <caret line="26" column="68" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getWeekly#0;class#API#0" />
@@ -146,21 +117,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Hourly.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2081">
+            <state relative-caret-position="119">
               <caret line="11" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Hourly#0;class#Hourly#0" />
-                <element signature="e#3066#3067#0" expanded="true" />
-                <element signature="e#3093#3094#0" expanded="true" />
                 <element signature="method#getHourString#0;class#Hourly#0" />
-                <element signature="e#3598#3599#0" expanded="true" />
-                <element signature="e#3625#3626#0" expanded="true" />
-                <element signature="e#4054#4055#0" expanded="true" />
-                <element signature="e#4088#4089#0" expanded="true" />
                 <element signature="method#updateWeathericon#0;class#Hourly#0" />
-                <element signature="e#5031#5032#0" expanded="true" />
-                <element signature="e#5065#5066#0" expanded="true" />
                 <element signature="method#refreshdata#0;class#Hourly#0" />
               </folding>
             </state>
@@ -238,9 +201,9 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Hourly.java" />
         <option value="$PROJECT_DIR$/src/Summary.java" />
-        <option value="$PROJECT_DIR$/src/API.java" />
         <option value="$PROJECT_DIR$/src/HourlyController.java" />
         <option value="$PROJECT_DIR$/src/Today.java" />
+        <option value="$PROJECT_DIR$/src/API.java" />
       </list>
     </option>
   </component>
@@ -256,8 +219,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -279,6 +240,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -364,7 +327,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16944024" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17170954" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -374,7 +337,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4969743" weight="0.05237316" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4969743" visible="true" weight="0.05237316" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -511,16 +474,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ParameterStringBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ParameterStringBuilder.java" />
     <entry file="file://$PROJECT_DIR$/src/ScreenController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -556,15 +510,25 @@
     <entry file="file://$PROJECT_DIR$/src/mainPage.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
+        <state relative-caret-position="595">
           <caret line="35" column="77" selection-start-line="35" selection-start-column="77" selection-end-line="35" selection-end-column="77" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Weekly.java">
+    <entry file="file://$PROJECT_DIR$/src/DailyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="81" column="25" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
+        <state relative-caret-position="425">
+          <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HourlyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="73" column="46" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -574,14 +538,24 @@
     <entry file="file://$PROJECT_DIR$/src/Summary.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DailyController.java">
+    <entry file="file://$PROJECT_DIR$/src/SettingsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-825">
-          <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+        <state relative-caret-position="578">
+          <caret line="43" column="21" selection-start-line="43" selection-end-line="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Weekly.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="81" column="25" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -590,30 +564,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Hourly.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2081">
+        <state relative-caret-position="119">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Hourly#0;class#Hourly#0" />
-            <element signature="e#3066#3067#0" expanded="true" />
-            <element signature="e#3093#3094#0" expanded="true" />
             <element signature="method#getHourString#0;class#Hourly#0" />
-            <element signature="e#3598#3599#0" expanded="true" />
-            <element signature="e#3625#3626#0" expanded="true" />
-            <element signature="e#4054#4055#0" expanded="true" />
-            <element signature="e#4088#4089#0" expanded="true" />
             <element signature="method#updateWeathericon#0;class#Hourly#0" />
-            <element signature="e#5031#5032#0" expanded="true" />
-            <element signature="e#5065#5066#0" expanded="true" />
             <element signature="method#refreshdata#0;class#Hourly#0" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Today.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="65" column="68" lean-forward="true" selection-start-line="65" selection-start-column="68" selection-end-line="65" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1462">
+          <caret line="96" selection-start-line="96" selection-end-line="96" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/API.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="72" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
+        <state relative-caret-position="303">
+          <caret line="26" column="68" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#getWeekly#0;class#API#0" />
@@ -623,40 +603,6 @@
             <element signature="method#truncate_data_weekly#0;class#API#0" />
             <element signature="method#weatherCoder#0;class#API#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HourlyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="73" column="46" lean-forward="true" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SettingsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="43" column="21" lean-forward="true" selection-start-line="43" selection-end-line="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Today.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="63" column="63" lean-forward="true" selection-start-line="63" selection-start-column="63" selection-end-line="63" selection-end-column="63" />
         </state>
       </provider>
     </entry>
