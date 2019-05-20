@@ -30,7 +30,7 @@ public class Summary {
         } catch (IOException e){
             System.out.println("ERROR, PLEASE DEBUG");
         }
-        //Days summary?
+        //Days summary
         Map<String,String> todays_data = weekly_data.get(0);
         this.rainProbability = Integer.parseInt(todays_data.get("probabilityOfRain"));
         this.weatherCode = Integer.parseInt(todays_data.get("weather_code"));
@@ -51,9 +51,8 @@ public class Summary {
         } catch (IOException e){
             System.out.println("ERROR, PLEASE DEBUG");
         }
-        //Days summary?
+        //Days summary
         Map<String,String> todays_data = weekly_data.get(day_of_week);
-        System.out.println(todays_data);
         this.rainProbability = Integer.parseInt(todays_data.get("probabilityOfRain"));
         this.weatherCode = Integer.parseInt(todays_data.get("weather_code"));
         this.highTemp = (int)Double.parseDouble(todays_data.get("tempMAX"));
@@ -64,29 +63,18 @@ public class Summary {
         this.apparentTemp =  temp;
         this.cloudCoverage = Integer.parseInt(todays_data.get("cloud_coverage"));
         String weekDay = todays_data.get("date");
-        System.out.println(weekDay);
         this.day_of_week = date_to_day(weekDay);
-        System.out.println(this.day_of_week);
     }
 
     public String date_to_day(String in_date){
-//        Calendar cal = Calendar.getInstance();
-//        Date temp = cal.getTime();
         try{
-            System.out.println("printing date_to_day");
-            System.out.println("in_date: " + in_date);
             Date temp = new SimpleDateFormat("yyyy-MM-dd").parse(in_date);
-            System.out.println(temp);
             String out = new SimpleDateFormat("EE").format(temp);
-            System.out.println(out);
             return out;
         } catch (ParseException e){
             System.out.println("Error with date format...");
             return Calendar.getInstance().getTime().toString();
         }
-        // Date temp = new SimpleDateFormat("yyyy-MM-dd").parse(in_date);
-//
-//        return out;
     }
 
     public int getRainProbability() {
@@ -141,6 +129,7 @@ public class Summary {
         this.apparentTemp = apparentTemp;
     }
 
+    // determines whether it is in the day or at night
     public String getPartOfDay() {
         Calendar c = Calendar.getInstance();
         int timeOfDay = c.get(Calendar.HOUR_OF_DAY);
@@ -153,7 +142,6 @@ public class Summary {
         return partOfDay;
     }
 
-    //Day or night?
     public void setPartOfDay(String partOfDay) {
         this.partOfDay = partOfDay;
     }
@@ -177,10 +165,4 @@ public class Summary {
                 + partOfDay + " ,"
                 + cloudCoverage + " ,";
     }
-
-    public static void main(String[] args){
-        Summary trial = new Summary();
-        System.out.println(trial.toString());
-    }
-    
 }

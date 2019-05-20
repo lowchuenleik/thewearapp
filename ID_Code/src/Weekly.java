@@ -4,50 +4,15 @@ import java.util.*;
 public class Weekly {
     private ArrayList<Summary> days;
 
-    public static void main(String[] args) {
-//        Summary summary = new Summary(1);
-        Weekly weekly = new Weekly();
-        List<String> dayNames = weekly.getDayNames();
-        List<Integer> dayTemperatures = weekly.getTemperatures();
-        List<File> dayWeatherIcons = weekly.getWeatherIcons();
-
-        assert dayNames.size() == dayTemperatures.size();
-        assert dayTemperatures.size() == dayWeatherIcons.size();
-        System.out.println(dayNames);
-        System.out.println(dayWeatherIcons);
-        System.out.println(dayTemperatures);
-//        for (String s: dayNames){
-//            System.out.println(s);
-//        }
-//        for (Integer i: dayTemperatures){
-//            System.out.println(i + " deg");
-//        }
-//        for (File f: dayWeatherIcons){
-//            System.out.println(f.getPath());
-//        }
-    }
-
     //CONSTRUCTOR: Weekly stores all of the days of the week as Summary objects
     public Weekly() {
         days = new ArrayList<>();
 
         //creates a summary for every day of the week
         for (int i=1; i<7; i++) {
-//            System.out.println("day " + i);
             Summary dayi = new Summary(i);
-//            System.out.println(dayi.getDay());
-//            System.out.println(dayi.getAverageTemp());
             days.add(dayi);
         }
-//        for (int j=0; j<days.size(); j++){
-//            System.out.println("\nChecking " + j + "th summary...");
-//            Summary day = days.get(j);
-//            System.out.println(day.getDay());
-//            System.out.println(day.getAverageTemp());
-//            System.out.println(day.getApparentTemp());
-//        }
-
-//        this.days = days;
     }
 
     //ARGUMENTS: none
@@ -73,7 +38,7 @@ public class Weekly {
     public List<String> getDayNames(){
         List<String> daynames = new LinkedList<>();
         for (Summary d : days) {
-            daynames.add(/*0,*/ d.getDay()); //prepends the list
+            daynames.add( d.getDay());
         }
 
         return daynames;
@@ -85,7 +50,7 @@ public class Weekly {
     public List<Integer> getTemperatures(){
         List<Integer> daytemps = new LinkedList<>();
         for (Summary d : days) {
-            daytemps.add(/*0,*/ d.getAverageTemp());
+            daytemps.add( d.getAverageTemp());
         }
 
         return daytemps;
@@ -114,7 +79,7 @@ public class Weekly {
                     break;
             }
 
-            dayicons.add(/*0,*/ icon);
+            dayicons.add(icon);
         }
 
         return dayicons;

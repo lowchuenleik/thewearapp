@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="534.0" prefWidth="300.0" style=".root{-fx-background-image: url('file:src/data/background/cloudy.png');}" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" prefHeight="534.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
     <padding><Insets bottom="10" left="25" right="25" top="25" /></padding>
 
     <AnchorPane>
@@ -27,24 +27,22 @@
                     <fx:reference source="clothing"/>
                 </image>
             </ImageView>
-
-
             <AnchorPane prefHeight="25.0" prefWidth="120.0" VBox.vgrow="ALWAYS">
                 <Button onAction="#previousClothes" text="previous" AnchorPane.leftAnchor="1" />
                 <Button onAction="#nextClothes" text="next" AnchorPane.rightAnchor="1" />
             </AnchorPane>
         </VBox>
         <VBox alignment="CENTER" prefHeight="150.0" GridPane.columnIndex="1" GridPane.fillHeight="true" GridPane.rowIndex="0">
-            <Text fx:id="day" fill="white" scaleX="3" scaleY="3" text="day$">
+            <Text fx:id="day" fill="white" scaleX="3" scaleY="3" text="$mainDay">
                 <effect>
                     <DropShadow />
                 </effect></Text>
             <Text text="" />
-            <Text fx:id="temp" fill="white" scaleX="2" scaleY="2" text="temp$">
+            <Text fx:id="temp" fill="white" scaleX="2" scaleY="2" text="$mainTemp">
                 <effect>
                     <DropShadow />
                 </effect></Text>
-            <Text fx:id="text" fill="white" text="text$" textAlignment="CENTER" wrappingWidth="100">
+            <Text fx:id="text" fill="white" text="$mainText" textAlignment="CENTER" wrappingWidth="100">
                 <effect>
                     <DropShadow />
                 </effect></Text>

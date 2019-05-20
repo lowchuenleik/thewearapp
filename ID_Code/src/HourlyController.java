@@ -18,6 +18,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class HourlyController implements Initializable {
+    // @FXML means that the fields are used by the .fxml documents
+    // IMPORTANT: fields used by fxml CANNOT be marked static
 
     @FXML
     private Text hourlyTitle;
@@ -33,11 +35,11 @@ public class HourlyController implements Initializable {
     @FXML
     private AnchorPane header;
 
+    // toggle between pages
     @FXML
     public void toHome(ActionEvent event){
         Main.controller.toHome(event);
     }
-
     @FXML
     public void toSettings(ActionEvent event){
         Main.controller.toSettings(event);
@@ -45,6 +47,7 @@ public class HourlyController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //initialise settings button
         try {
             ImageView settingsIcon = new ImageView(new Image(new FileInputStream("src/data/gear.png")));
             settingsIcon.setPreserveRatio(true);
@@ -55,32 +58,27 @@ public class HourlyController implements Initializable {
             System.out.println("src/data/gear.png not found");
         }
 
+        // initialise title of page
+        hourlyTitle.setText(Main.day);
+
+        // get lists of hourly data
         List<String> hours = Hourly.getHours();
         List<Integer> temperatures = Hourly.getTemperatures();
         List<File> weatherIcons = Hourly.getWeatherIcons();
 
-        hourlyTitle.setText(Main.day);
-
-
-//        ImageView weatherIcon = (ImageView) firstHour.getChildren().get(0);
-//        weatherIcon.setImage(new Image("file:" + "src/data/hourlyicons/sunny.png"));
-//        Text temp = (Text) firstHour.getChildren().get(1);
-//        temp.setText("14 C");
-//        Text hour = (Text) firstHour.getChildren().get(2);
-//        hour.setText("10:00");
-
+        // put the data into a table on the hourly page
         for (int i=0; i<hours.size(); i++) {
-//            String tempText = "12 C";
-//            String hourText = "09:00";
-//            String iconPath = "file:" + "src/data/hourlyicons/sunny.png";
-
             String tempText = temperatures.get(i) + "°C";
             String hourText = hours.get(i);
             String iconPath = weatherIcons.get(i).getPath();
+            int hour = Integer.parseInt(hourText.substring(0, 2));
+            if (hour > 22 || hour < 5){
+                iconPath = "src/data/hourlyicons/cloudy.png";
+            }
 
             AnchorPane secondHour = new AnchorPane();
             secondHour.setLayoutX(2.0);
-            secondHour.setLayoutY(i*58.0); // TODO: change?? previous 0??
+            secondHour.setLayoutY(i*58.0);
             secondHour.setPrefHeight(58.0);
             secondHour.setPrefWidth(293.0);
             secondHour.setStyle(" -fx-border-color: white;\n-fx-border-width: 5px;\n-fx-background-color: #848689\n\n");

@@ -14,10 +14,7 @@
       </children>
     </AnchorPane>
     <ScrollPane fx:id="scrollpaneHours" layoutX="3.0" layoutY="53.0" prefHeight="479.0" prefWidth="295.0">
-      <AnchorPane fx:id="anchorpaneHours" prefHeight="656.0" prefWidth="297.0">
-
-
-      </AnchorPane>
+      <AnchorPane fx:id="anchorpaneHours" prefHeight="656.0" prefWidth="297.0"/>
     </ScrollPane>
   </children>
 </AnchorPane>

@@ -1,7 +1,4 @@
 /*adapted from https://docs.oracle.com/javafx/2/get_started/css.htm*/
-.root {
-     -fx-background-image: url("file:data/backgrounds/cloudy.png");
-}
 
 .label {
     -fx-font-size: 12px;

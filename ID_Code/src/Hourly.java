@@ -10,25 +10,6 @@ public class Hourly {
     private File weathericon;
     private int weathercode;
 
-    public static void main(String[] args) {
-        List<String> hours = Hourly.getHours();
-        List<Integer> temperatures = Hourly.getTemperatures();
-        List<File> weatherIcons = Hourly.getWeatherIcons();
-
-        System.out.println(hours.size());
-        System.out.println(temperatures.size());
-        System.out.println(weatherIcons.size());
-
-        for (String h: hours){
-            System.out.println(h);
-        }
-        for (Integer i: temperatures){
-            System.out.println(i);
-        }
-        for (File f: weatherIcons){
-            System.out.println(f.getPath());
-        }
-    }
 
     //CONSTRUCTOR: Hourly is an object that allows the weather information about each
     // hour in the day to be stored in one object.
@@ -207,8 +188,6 @@ public class Hourly {
             for (Map<String, String> entry : daily_data) {
                 intime = entry.get("localTime");
                 temp = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(intime);
-                System.out.println(temp);
-                System.out.println(new SimpleDateFormat("HH:mm").format(temp));
                 String twentyfourtime = new SimpleDateFormat("HH:mm").format(temp);
                 entry.put("hour", twentyfourtime);
             }
@@ -225,15 +204,7 @@ public class Hourly {
         List<String> output = new LinkedList<>();
         for (Map<String,String> entry: data){
             String h = entry.get("hour");
-//            String h = String.valueOf((int)Double.parseDouble(entry.get("hour")));
-//            if (h.length() == 1) {
-//                h = "0"+h+":00";
-//            } else if (h.length() == 2) {
-//                h = h+":00";
-//            } else {
-//                System.out.println("ERROR IN HOUR OUTPUTS");
-//            }
-            output.add(/*0,*/h);  //prepends it!  -- CHANGED TO APPEND
+            output.add(h);
         }
 
         return output;
@@ -246,7 +217,7 @@ public class Hourly {
         List<Map<String,String>> data = hourlydata_augmented();
         List<Integer> output = new LinkedList<>();
         for (Map<String,String> entry: data){
-            output.add(/*0,*/(int)Double.parseDouble(entry.get("feelsLikeTemp")));//preprends it! -- CHANGED TO APPEND
+            output.add((int)Double.parseDouble(entry.get("feelsLikeTemp")));
         }
         return output;
     }
@@ -272,7 +243,7 @@ public class Hourly {
                 case 4: icon = new File("src/data/hourlyicons/snowy.png");
                     break;
             }
-            output.add(/*0,*/ icon);    //prepends the image --  -- CHANGED TO APPEND
+            output.add(icon);
         }
 
         return output;

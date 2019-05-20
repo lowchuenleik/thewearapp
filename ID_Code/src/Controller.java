@@ -14,6 +14,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
+    // @FXML means that the fields are used by the .fxml documents
     // IMPORTANT: fields used by fxml CANNOT be marked static
 
     @FXML
@@ -30,10 +31,9 @@ public class Controller implements Initializable {
 
     @FXML
     private ImageView imageView;
-
-    static int clothesIndex=0;
     @FXML
     static Image clothing;
+    static int clothesIndex=0;
 
     @FXML
     private ImageView accessory1;
@@ -47,26 +47,25 @@ public class Controller implements Initializable {
     @FXML
     static BackgroundImage backgroundImage;
 
+    // to toggle between pages
     @FXML
     protected void toHome(ActionEvent event) {
         Main.screenController.activate("home");
     }
-
     @FXML
     protected void toSettings(ActionEvent event){
         Main.screenController.activate("settings");
     }
-
     @FXML
     protected void toDaily(ActionEvent event){
         Main.screenController.activate("daily");
     }
-
     @FXML
     protected void toHourly(ActionEvent event){
         Main.screenController.activate("hourly");
     }
 
+    // to toggle between clothes options
     @FXML
     protected void nextClothes(ActionEvent event) throws IOException {
         if (clothesIndex < Main.clothes.size()-1){
@@ -79,6 +78,7 @@ public class Controller implements Initializable {
         imageView.setImage(Controller.clothing);
     }
 
+    // to toggle between clothes options
     @FXML
     protected void previousClothes(ActionEvent event) throws IOException {
         if (clothesIndex > 0){
@@ -91,6 +91,7 @@ public class Controller implements Initializable {
         imageView.setImage(Controller.clothing);
     }
 
+    // called when home page is created, to initialise the settings button
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
@@ -104,10 +105,10 @@ public class Controller implements Initializable {
         }
     }
 
+    // refreshes the home page
     @FXML
     public void refresh() throws FileNotFoundException {
-        Summary summary = new Summary();
-        Today today = new Today(summary);
+        Today today = new Today(Main.todaySummary);
         Main.initialise(today);
         accessory1.setImage(null);
         accessory2.setImage(null);

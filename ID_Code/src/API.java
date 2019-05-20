@@ -1,6 +1,3 @@
-// requires installation of JSON-java
-// TODO: comment
-// TODO: improve modularity, access modifiers
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -9,7 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.ArrayList;
@@ -73,8 +69,8 @@ public class API {
         con.setRequestMethod("GET");
         con.setRequestProperty("Content-Type", "application/json");
 
-        System.out.println(con.getResponseCode());
-        System.out.println(con.getResponseMessage());
+//        System.out.println(con.getResponseCode());
+//        System.out.println(con.getResponseMessage());
 
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(con.getInputStream()));
@@ -88,6 +84,7 @@ public class API {
 
     }
 
+    // get weekly form of api data (breakdown of days)
     public List<Map<String,String>> getWeekly() throws IOException{
 
         Map params = new HashMap<String,String>();
@@ -102,6 +99,7 @@ public class API {
         return weekly_data;
     }
 
+    // get daily form of api data (breakdown of hours)
     public List<Map<String,String>> getDaily() throws IOException{
 
         Map params = new HashMap<String,String>();
@@ -119,12 +117,11 @@ public class API {
     // truncates the fullJSON object that was fetched, into an hourly list of various attributes (local time, temp, wind speed, rain)
     public void truncateData() {
         List<Map<String, String>> essentialData = new ArrayList();
-        //System.out.println(fullJSON);
         JSONArray forecastData = fullJSON.getJSONArray("data");
         for (int i = 0; i < forecastData.length(); i++) {
             JSONObject hour = forecastData.getJSONObject(i);
             Map<String, String> conditions = new HashMap<>();
-            // can possible include more variables of interest
+            // can possibly include more variables of interest
             // look at https://www.weatherbit.io/api/weather-forecast-120-hour
             conditions.put("temp", hour.get("temp").toString());
             conditions.put("windSpeed", hour.get("wind_spd").toString());
@@ -146,12 +143,11 @@ public class API {
             essentialData.add(conditions);
         }
         truncatedData = essentialData;
-        //System.out.println(truncatedData.size());
     }
 
+    // truncates the json data to get the essential data
     public List<Map<String, String>> truncate_data_daily(JSONObject injson) {
         List<Map<String, String>> essentialData = new ArrayList();
-        //System.out.println(fullJSON);
         JSONArray forecastData = injson.getJSONArray("data");
         for (int i = 0; i < forecastData.length(); i++) {
             JSONObject hour = forecastData.getJSONObject(i);
@@ -179,9 +175,9 @@ public class API {
         return essentialData;
     }
 
+    // truncates the json data to get the essential data
     public List<Map<String, String>> truncate_data_weekly(JSONObject injson) {
         List<Map<String, String>> essentialData = new ArrayList();
-        //System.out.println(fullJSON);
         JSONArray forecastData = injson.getJSONArray("data");
         for (int i = 0; i < forecastData.length(); i++) {
             JSONObject hour = forecastData.getJSONObject(i);
@@ -211,7 +207,8 @@ public class API {
         }
         return essentialData;
     }
-    //, 0:sunny 1:windy 2:cloudy 3:rainy 4:snowy
+
+    // 0:sunny 1:windy 2:cloudy 3:rainy 4:snowy
     //This weather code is for weekly data, and we will create alternative logic for the 
     //DAILY SUMMARY WEATHERCODE
     public int weatherCoder(int weathercode,double windspeed){
@@ -246,49 +243,4 @@ public class API {
         return answer;
     }
 
-    // sets parameters and fetches json data using getHourly(), then truncates it into the essential bits using truncateData
-    public static void main(String[] args) throws IOException {
-
-        API test = new API();
-
-        // Dictionary of parameters
-        Map params = new HashMap<String,String>();
-
-        // OPTION 1: by longitude and latitude
-        params.put("lat", CAM_LAT);
-        params.put("lon", CAM_LON);
-        //Necessary for 5 DAY from HOURLY
-        params.put("hours","48");        
-
-        // OPTION 2: by city and country
-        // params.put("city", "Cambridge");
-        // params.put("country", "UK");
-
-        // test.setParams(params);
-        // test.setFullJSON(getHourly(apiKey, params));
-        // test.truncateData();
-
-        List<Map<String,String>> daily = test.getDaily();
-        //System.out.println(daily);
-        List<Map<String,String>> weekly = test.getWeekly();
-        System.out.println(weekly);
-        for (Map<String,String> xx:weekly){
-            System.out.println("DATE TIME");
-            System.out.println(xx.get("date_time"));
-        }
-        //test.setLastFetched(LocalDateTime.now());
-
-        //System.out.println("fullJSON: " + test.fullJSON);
-        //System.out.println("truncatedData: " + test.truncatedData);
-        //{localTime=2019-05-09T17:00:00, temp=9.7, feelsLikeTemp=9.7, windSpeed=3.50521, probabilityOfRain=10}
-    }
 }
-
-
-// {"moonrise_ts":1557862741,"wind_cdir":"NW","rh":49,"pres":1003.5,"sunset_ts":1557878809,
-// "ozone":344.934,"moon_phase":0.920222,"wind_gust_spd":12.3,"snow_depth":0,"clouds":9,
-// "ts":1557806460,"sunrise_ts":1557828382,"app_min_temp":12.7,"wind_spd":4.87802,"pop":0,
-// "wind_cdir_full":"northwest","slp":1013.51,"app_max_temp":19.8,"vis":24.1,"dewpt":6.3,
-// "snow":0,"uv":10.362,"valid_date":"2019-05-14","wind_dir":312,"max_dhi":null,"clouds_hi":1,
-// "precip":0,"weather":{"icon":"c02d","code":801,"description":"Few clouds"},"max_temp":20.8,
-// "moonset_ts":1557824053,"datetime":"2019-05-14","temp":17.6,"min_temp":12.7,"clouds_mid":0,"clouds_low":8},

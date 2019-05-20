@@ -17,17 +17,22 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class DailyController implements Initializable {
+    // @FXML means that the fields are used by the .fxml documents
+    // IMPORTANT: fields used by fxml CANNOT be marked static
 
     @FXML
     private Button settingsButton;
     @FXML
     private AnchorPane anchorpaneHours;
+
+    // toggle between pages
     @FXML
     public void toHome(ActionEvent event){
         Main.controller.toHome(event);
     }
     @FXML
-    public void toSettings(ActionEvent event){ Main.controller.toSettings(event);
+    public void toSettings(ActionEvent event){
+        Main.controller.toSettings(event);
     }
 
     @Override
@@ -49,17 +54,18 @@ public class DailyController implements Initializable {
         List<Integer> dayTemperatures = weekly.getTemperatures();
         List<File> dayWeatherIcons = weekly.getWeatherIcons();
 
+        // fills up the page with each hour of data
         for (int i=0; i<dayNames.size(); i++) {
             String tempText = dayTemperatures.get(i) + "°C";
             String nameText = dayNames.get(i);
             String iconPath = dayWeatherIcons.get(i).getPath();
 
-            AnchorPane secondHour = new AnchorPane();
-            secondHour.setLayoutX(2.0);
-            secondHour.setLayoutY(i*58.0);
-            secondHour.setPrefHeight(58.0);
-            secondHour.setPrefWidth(287.0);
-            secondHour.setStyle(" -fx-border-color: white;\n-fx-border-width: 5px;\n-fx-background-color: #848689\n\n");
+            AnchorPane secondDay = new AnchorPane();
+            secondDay.setLayoutX(2.0);
+            secondDay.setLayoutY(i*58.0);
+            secondDay.setPrefHeight(58.0);
+            secondDay.setPrefWidth(287.0);
+            secondDay.setStyle(" -fx-border-color: white;\n-fx-border-width: 5px;\n-fx-background-color: #848689\n\n");
 
             ImageView secondWeatherIcon = new ImageView();
             secondWeatherIcon.setFitHeight(43.0);
@@ -94,9 +100,9 @@ public class DailyController implements Initializable {
             secondHourText.setStyle("-fx-font-weight:bold;\n-fx-font-size: 30;");
             secondHourText.setText(nameText);
 
-            secondHour.getChildren().addAll(secondWeatherIcon, secondTemp, secondHourText);
+            secondDay.getChildren().addAll(secondWeatherIcon, secondTemp, secondHourText);
 
-            anchorpaneHours.getChildren().add(secondHour);
+            anchorpaneHours.getChildren().add(secondDay);
         }
     }
 

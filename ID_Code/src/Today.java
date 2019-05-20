@@ -64,7 +64,6 @@ public class Today {
         else if(sum.getAverageTemp() <= 10){//below jacket temp
             clothes.add(new File(dataFolder + "clothes/snowy1.png"));
             clothes.add(new File(dataFolder + "clothes/cold1.png"));
-
         }
 
         else { //warm
@@ -82,7 +81,6 @@ public class Today {
                 clothes.add(new File(dataFolder + "clothes/warm5.png"));
             }
             clothes.add(new File(dataFolder + "clothes/warm6.png"));
-
         }
 
         return clothes;

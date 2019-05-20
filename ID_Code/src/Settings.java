@@ -11,7 +11,7 @@ public class Settings{
     public static void setEnableNotifications(boolean b){enableNotifications = b;}
     public static boolean getEnableNotifications(){return enableNotifications;}
 
-    //unit
+    //unit of temperature
     public static void setUnit(boolean b) {
         unit_isCelcius = b;
     }
@@ -19,7 +19,7 @@ public class Settings{
         return unit_isCelcius;
     }
 
-    //jacket
+    //tempearture in celcius for jacket suggestion
     public static void setJacket(int t){
         jacket=t;
     }
@@ -27,7 +27,7 @@ public class Settings{
         return jacket;
     }
 
-    //rain
+    //probability of rainfall for umbrella suggestion
     public static void setRain(int p){
         rain=p;
     }
@@ -35,7 +35,7 @@ public class Settings{
         return rain;
     }
 
-    //clothes array
+    //clothes array, determining whether the user uses these types of clothes
     public static boolean[] getClothes() {
         return clothes;
     }
