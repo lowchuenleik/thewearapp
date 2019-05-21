@@ -216,10 +216,8 @@ public class API {
         switch (weathercode){
             case 800: weathercode+=100;
                 break;
-            //HACKY, CONSIDER REMOVING
             case 801: weathercode+=100;
                 break;
-            //HACKY, CONSIDER REMOVING
             default: break;
         }
         switch (weathercode/100){
