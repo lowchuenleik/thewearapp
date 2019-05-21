@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d25f41e5-2067-400c-88ea-380fb99929bf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ID_Code/API.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ID_Code/API.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ID_Code/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ID_Code/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ID_Code/Summary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ID_Code/Summary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ID_Code/settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ID_Code/settings.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/API.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Summary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Summary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,7 +27,7 @@
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="297">
-              <caret line="51" column="46" lean-forward="true" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
+              <caret line="54" column="46" lean-forward="true" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -53,17 +44,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Summary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="60" selection-start-line="60" selection-end-line="60" />
+            <state relative-caret-position="171">
+              <caret line="62" selection-start-line="62" selection-end-line="62" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Settings.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+              <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -115,17 +106,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/API.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1023">
-              <caret line="33" column="44" lean-forward="true" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+            <state>
+              <caret lean-forward="true" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#getWeekly#0;class#API#0" />
                 <element signature="method#getDaily#0;class#API#0" />
                 <element signature="method#truncateData#0;class#API#0" />
-                <element signature="method#truncate_data_weekly#0;class#API#0" />
               </folding>
             </state>
           </provider>
@@ -199,12 +189,12 @@
         <option value="$PROJECT_DIR$/src/HourlyController.java" />
         <option value="$PROJECT_DIR$/src/DailyController.java" />
         <option value="$PROJECT_DIR$/src/daily.fxml" />
-        <option value="$PROJECT_DIR$/src/API.java" />
         <option value="$PROJECT_DIR$/src/settings.fxml" />
         <option value="$PROJECT_DIR$/src/Summary.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/SettingsController.java" />
         <option value="$PROJECT_DIR$/src/Settings.java" />
+        <option value="$PROJECT_DIR$/src/API.java" />
       </list>
     </option>
   </component>
@@ -246,7 +236,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558450398866" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558451001872" />
     <property name="last_opened_file_path" value="$USER_HOME$/GitHub_Projects/JAR_Files/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -328,7 +318,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17170954" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17170954" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -338,7 +328,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4969743" visible="true" weight="0.28477904" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4969743" visible="true" weight="0.28477904" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -543,20 +533,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/API.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1023">
-          <caret line="33" column="44" lean-forward="true" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getWeekly#0;class#API#0" />
-            <element signature="method#getDaily#0;class#API#0" />
-            <element signature="method#truncateData#0;class#API#0" />
-            <element signature="method#truncate_data_weekly#0;class#API#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/settings.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -567,8 +543,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Summary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="171">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
         </state>
       </provider>
     </entry>
@@ -586,7 +562,7 @@
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
-          <caret line="51" column="46" lean-forward="true" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
+          <caret line="54" column="46" lean-forward="true" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -603,7 +579,20 @@
     <entry file="file://$PROJECT_DIR$/src/Settings.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/API.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getWeekly#0;class#API#0" />
+            <element signature="method#getDaily#0;class#API#0" />
+            <element signature="method#truncateData#0;class#API#0" />
+          </folding>
         </state>
       </provider>
     </entry>
