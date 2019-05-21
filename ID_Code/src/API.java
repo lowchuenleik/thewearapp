@@ -24,7 +24,7 @@ import java.util.Map;
 
 public class API {
 
-    private static String apiKey = "9b9468c55801419abe17b70d7acd5c6e";
+    private static String apiKey = "307b1da5472a4a3eb5bb749be38b7a72";
     private static String apiURL = "http://api.weatherbit.io/v2.0/forecast/hourly";
     private JSONObject fullJSON;
     private LocalDateTime lastFetched = LocalDateTime.of(2000, Month.JANUARY, 01, 01, 01);
