@@ -50,7 +50,7 @@
         </Group>
       </children>
     </AnchorPane>
-    <Button layoutX="222.0" layoutY="7.0" minHeight="18.0" mnemonicParsing="false" onAction="#toHome" prefHeight="24.0" prefWidth="67.6845703125" text="Home">
+    <Button layoutX="222.0" layoutY="7.0" minHeight="18.0" mnemonicParsing="false" onAction="#toHome" prefHeight="24.0" prefWidth="67.6845703125" text="save">
       <font>
         <Font size="13.0" />
       </font>
