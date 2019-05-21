@@ -108,6 +108,7 @@ public class Controller implements Initializable {
     // refreshes the home page
     @FXML
     public void refresh() throws FileNotFoundException {
+        Main.todaySummary = new Summary();
         Today today = new Today(Main.todaySummary);
         Main.initialise(today);
         accessory1.setImage(null);
