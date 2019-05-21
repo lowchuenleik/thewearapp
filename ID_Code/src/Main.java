@@ -11,6 +11,9 @@ import java.io.FileInputStream;
 import java.util.LinkedList;
 import java.util.List;
 
+//javac -classpath "C:\Users\chuen\Desktop\Uni\Paper 3\Interaction Design\weatherapp\javafx-sdk-11.0.2\lib\*.jar;json-20180813.jar" -d ./out ID_CODE/src/API.java ID_CODE/src/*.java
+//"C:\Program Files\Java\jdk-11.0.1\bin\java.exe" --module-path "C:\Users\chuen\Desktop\Uni\Paper 3\Interaction Design\weatherapp\javafx-sdk-11.0.2\lib" --add-modules javafx.controls,javafx.fxml --add-modules javafx.base,javafx.graphics --add-reads javafx.base=ALL-UNNAMED --add-reads javafx.graphics=ALL-UNNAMED -classpath "C:\Users\chuen\Desktop\Uni\Paper 3\Interaction Design\weatherapp\ID_Code\out\production\ID_Code;C:\Users\chuen\Desktop\Uni\Paper 3\Interaction Design\weatherapp\json-20180813.jar;" Main
+
 public class Main extends Application {
     static Controller controller;
     static SettingsController settingsController;

@@ -123,6 +123,8 @@ public class API {
             Map<String, String> conditions = new HashMap<>();
             // can possibly include more variables of interest
             // look at https://www.weatherbit.io/api/weather-forecast-120-hour
+
+            //Stores data in HashMap that is passed around.
             conditions.put("temp", hour.get("temp").toString());
             conditions.put("windSpeed", hour.get("wind_spd").toString());
             if (!hour.isNull("app_temp")){
@@ -134,7 +136,6 @@ public class API {
             conditions.put("probabilityOfRain", hour.get("pop").toString());
             conditions.put("localTime", hour.get("timestamp_local").toString());
 
-            //Messy casting...Accessing nested JSON objects 
             JSONObject weather_detail = (JSONObject)hour.get("weather");
             conditions.put("weather_code",weather_detail.get("code").toString());
             conditions.put("weather_icon",(String)weather_detail.get("icon"));
@@ -154,6 +155,8 @@ public class API {
             Map<String, String> conditions = new HashMap<>();
             // can possible include more variables of interest
             // look at https://www.weatherbit.io/api/weather-forecast-120-hour
+
+            //Stores data in HashMap that is passed around.
             conditions.put("temp", hour.get("temp").toString());
             conditions.put("feelsLikeTemp", hour.get("app_temp").toString());
             conditions.put("windSpeed", hour.get("wind_spd").toString());
@@ -161,7 +164,6 @@ public class API {
             conditions.put("localTime", hour.get("timestamp_local").toString());
             conditions.put("cloud_coverage",hour.get("clouds").toString());
 
-            //Messy casting...Accessing nested JSON objects 
             JSONObject weather_detail = (JSONObject)hour.get("weather");
             Integer raw_weather_code = (Integer)weather_detail.get("code");
             Double windspeed = Double.parseDouble(conditions.get("windSpeed"));
@@ -184,6 +186,8 @@ public class API {
             Map<String, String> conditions = new HashMap<>();
             // can possible include more variables of interest
             // look at https://www.weatherbit.io/api/weather-forecast-120-hour
+
+            //Stores data in HashMap that is passed around.
             conditions.put("temp", hour.get("temp").toString());
             conditions.put("feelsLikeTemp_MAX", hour.get("app_max_temp").toString());
             conditions.put("feelsLikeTemp_MIN", hour.get("app_min_temp").toString());
@@ -194,7 +198,6 @@ public class API {
             conditions.put("date", hour.get("valid_date").toString());
             conditions.put("cloud_coverage",hour.get("clouds").toString());
 
-            //Messy casting...Accessing nested JSON objects 
             JSONObject weather_detail = (JSONObject)hour.get("weather");
             Integer raw_weather_code = (Integer)weather_detail.get("code");
             Double windspeed = Double.parseDouble(conditions.get("windSpeed"));
@@ -212,14 +215,12 @@ public class API {
     //This weather code is for weekly data, and we will create alternative logic for the 
     //DAILY SUMMARY WEATHERCODE
     public int weatherCoder(int weathercode,double windspeed){
-        int answer = 0; //sunny is safe default
+        int answer = 0; //sunny is a safe default
         switch (weathercode){
             case 800: weathercode+=100;
                 break;
-            //HACKY, CONSIDER REMOVING
             case 801: weathercode+=100;
                 break;
-            //HACKY, CONSIDER REMOVING
             default: break;
         }
         switch (weathercode/100){
