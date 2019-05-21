@@ -72,8 +72,8 @@ public class HourlyController implements Initializable {
             String hourText = hours.get(i);
             String iconPath = weatherIcons.get(i).getPath();
             int hour = Integer.parseInt(hourText.substring(0, 2));
-            if (hour > 22 || hour < 5){
-                iconPath = "src/data/hourlyicons/cloudy.png";
+            if (hour > 21 || hour < 5){
+                iconPath = "src/data/hourlyicons/night.png";
             }
 
             AnchorPane secondHour = new AnchorPane();

@@ -36,7 +36,6 @@ public class Main extends Application {
 
     static Summary todaySummary;
 
-    // ACTUAL
     public static void initialise(Today today){
         clothes = today.getClothes();
         accessories = today.getAccessories();
@@ -46,6 +45,7 @@ public class Main extends Application {
         day = today.getDay();
     }
 
+    // this is the main method that is run for the GUI
     @Override
     public void start(Stage primaryStage) throws Exception{
         todaySummary = new Summary();
