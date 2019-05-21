@@ -23,22 +23,9 @@ public class SettingsController{
     private CheckBox cb_4;
     @FXML
     private CheckBox cb_5;
-    @FXML
-    private CheckBox notifications;
-
-    @FXML
-    private void setFahrenheit(){
-        Settings.setUnit(false);
-    }
-
-    @FXML
-    private void setCelsius(){
-        Settings.setUnit(true);
-    }
 
     @FXML
     public void save() {
-        Settings.setEnableNotifications(notifications.isSelected());
         Settings.setJacket((int)slider_jacket.getValue());
         Settings.setRain((int)slider_rain.getValue());
         Settings.setClothes(cb_1.isSelected(), cb_2.isSelected(), cb_3.isSelected(),cb_4.isSelected(),cb_5.isSelected());

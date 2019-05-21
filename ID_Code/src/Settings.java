@@ -1,25 +1,11 @@
 public class Settings{
     //sets the values to defaults
     private static String location = "Cambridge";
-    static boolean enableNotifications = false;
-    static boolean unit_isCelcius = true;
     static int jacket = 20;
     static int rain = 50;
     private static boolean[] clothes = resetClothes();
 
-    //enable notifications
-    public static void setEnableNotifications(boolean b){enableNotifications = b;}
-    public static boolean getEnableNotifications(){return enableNotifications;}
-
-    //unit of temperature
-    public static void setUnit(boolean b) {
-        unit_isCelcius = b;
-    }
-    public static boolean getUnit(){
-        return unit_isCelcius;
-    }
-
-    //tempearture in celcius for jacket suggestion
+    //temperature in celsius for jacket suggestion
     public static void setJacket(int t){
         jacket=t;
     }

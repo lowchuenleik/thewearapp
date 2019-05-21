@@ -58,7 +58,6 @@ public class Summary {
         this.highTemp = (int)Double.parseDouble(todays_data.get("tempMAX"));
         this.averageTemp = (int)Double.parseDouble(todays_data.get("temp"));
         this.lowTemp = (int)Double.parseDouble(todays_data.get("tempMIN"));
-        //Hacky fix due to conflicting API input
         Integer temp = (int)(Double.parseDouble(todays_data.get("feelsLikeTemp_MAX"))-Double.parseDouble(todays_data.get("feelsLikeTemp_MIN")));
         this.apparentTemp =  temp;
         this.cloudCoverage = Integer.parseInt(todays_data.get("cloud_coverage"));
