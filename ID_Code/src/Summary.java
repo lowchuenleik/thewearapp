@@ -18,6 +18,7 @@ public class Summary {
     private int apparentTemp;
     private String partOfDay;
     private int cloudCoverage;
+    private int currentTemp;
     private String day_of_week;
 
     public Summary() {
@@ -38,6 +39,7 @@ public class Summary {
         this.lowTemp = (int)Double.parseDouble(todays_data.get("tempMIN"));
         this.apparentTemp = (int)Double.parseDouble(daily_data.get(0).get("feelsLikeTemp"));
         this.cloudCoverage = Integer.parseInt(todays_data.get("cloud_coverage"));
+        this.currentTemp = (int)Double.parseDouble(daily_data.get(0).get("temp"));
         this.day_of_week = LocalDate.now().getDayOfWeek().name().substring(0,3);
     }
 
@@ -163,5 +165,9 @@ public class Summary {
                 + apparentTemp + " ,"
                 + partOfDay + " ,"
                 + cloudCoverage + " ,";
+    }
+
+    public int MainTemp(){
+        return this.currentTemp;
     }
 }

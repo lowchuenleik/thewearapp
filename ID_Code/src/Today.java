@@ -20,7 +20,7 @@ public class Today {
         this.genWeather = sum.getWeatherCode();
         this.clothes = setClothes(sum);
         this.accessories = setAccessories(sum);
-        this.temperature = sum.getAverageTemp();
+        this.temperature = sum.MainTemp();
         this.background = setBackground(sum);
         this.message = setMessage(sum);
     }
